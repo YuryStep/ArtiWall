@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		466A68D3B619E6BF8B98F2AA /* Pods_ArtiWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D294D57BACE4F7FFE862DA /* Pods_ArtiWall.framework */; };
+		EFAE42C62B83EFCE009F1C3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */; };
+		EFAE42C82B83F026009F1C3F /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C72B83F026009F1C3F /* .swiftformat */; };
 		EFB7A0FC2B83543F00613834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A0FB2B83543F00613834 /* AppDelegate.swift */; };
 		EFB7A0FE2B83543F00613834 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A0FD2B83543F00613834 /* SceneDelegate.swift */; };
 		EFB7A1002B83543F00613834 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A0FF2B83543F00613834 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 		46D294D57BACE4F7FFE862DA /* Pods_ArtiWall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtiWall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBECCC33CE5B66F4A8EE2E5 /* Pods-ArtiWall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtiWall.debug.xcconfig"; path = "Target Support Files/Pods-ArtiWall/Pods-ArtiWall.debug.xcconfig"; sourceTree = "<group>"; };
 		A64B4EA5E2C2345BDD367176 /* Pods-ArtiWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtiWall.release.xcconfig"; path = "Target Support Files/Pods-ArtiWall/Pods-ArtiWall.release.xcconfig"; sourceTree = "<group>"; };
+		EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EFAE42C72B83F026009F1C3F /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		EFB7A0F82B83543F00613834 /* ArtiWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtiWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB7A0FB2B83543F00613834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFB7A0FD2B83543F00613834 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,9 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				EFB7A0FA2B83543F00613834 /* ArtiWall */,
-				EFB7A0F92B83543F00613834 /* Products */,
 				9BCA11608CD1BD7AD756F2FE /* Pods */,
 				534B61159310816E952C582B /* Frameworks */,
+				EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */,
+				EFAE42C72B83F026009F1C3F /* .swiftformat */,
+				EFB7A0F92B83543F00613834 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +101,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFB7A10C2B83544100613834 /* Build configuration list for PBXNativeTarget "ArtiWall" */;
 			buildPhases = (
+				EFDC71FA2B83E32A0022EB9E /* Run Script SwiftLint */,
 				3E1C29A034939053AD3A286D /* [CP] Check Pods Manifest.lock */,
 				EFB7A0F42B83543F00613834 /* Sources */,
 				EFB7A0F52B83543F00613834 /* Frameworks */,
@@ -148,6 +155,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAE42C82B83F026009F1C3F /* .swiftformat in Resources */,
+				EFAE42C62B83EFCE009F1C3F /* .swiftlint.yml in Resources */,
 				EFB7A1082B83544100613834 /* LaunchScreen.storyboard in Resources */,
 				EFB7A1052B83544100613834 /* Assets.xcassets in Resources */,
 			);
@@ -194,6 +203,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArtiWall/Pods-ArtiWall-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EFDC71FA2B83E32A0022EB9E /* Run Script SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
