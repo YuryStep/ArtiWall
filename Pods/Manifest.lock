@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (5.8.1)
+  - EasyTipView (2.1.0)
+  - Kingfisher (7.11.0)
+  - lottie-ios (4.4.0)
+  - SnapKit (5.7.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - EasyTipView
+  - Kingfisher
+  - "lottie-ios (from `git@github.com:airbnb/lottie-ios.git`)"
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - EasyTipView
+    - Kingfisher
+    - SnapKit
+
+EXTERNAL SOURCES:
+  lottie-ios:
+    :git: "git@github.com:airbnb/lottie-ios.git"
+
+CHECKOUT OPTIONS:
+  lottie-ios:
+    :commit: 2f0f7610aec94261b6e58bd52a5ed2e1127eeb19
+    :git: "git@github.com:airbnb/lottie-ios.git"
+
+SPEC CHECKSUMS:
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  EasyTipView: a92b6edc377b81c5ac18e9fd35d5ee78e9409488
+  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
+  lottie-ios: 176df7065abb1b1eff8dabc37a2f768411de2e49
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+
+PODFILE CHECKSUM: 9fd7c8b5e0da2afaeb76d2e9ac1deba10da77a21
+
+COCOAPODS: 1.12.1
