@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ArtiWall.xcodeproj">
+      location = "group:/Users/urijstepancuk/Development/ArtiWall/ArtiWall.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
