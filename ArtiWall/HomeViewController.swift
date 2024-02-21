@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  ArtiWall
 //
 //  Created by Юрий Степанчук on 19.02.2024.
@@ -39,6 +39,14 @@ final class HomeViewController: UIViewController {
         return button
     }()
 
+    private lazy var imageView: UIImageView = { // TODO: Remove
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+
+    let networkService = NetworkService(apiBuilder: APIBuilder()) // TODO: Remove
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -67,6 +75,7 @@ final class HomeViewController: UIViewController {
 
     private func setupSubviews() {
         view.addSubview(searchBar)
+        view.addSubview(imageView) // TODO: Remove
         searchBar.addSubview(searchButton)
 
         searchBar.snp.makeConstraints {
@@ -78,6 +87,12 @@ final class HomeViewController: UIViewController {
 
         searchButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(Constants.inset)
+        }
+
+        imageView.snp.makeConstraints { // TODO: Remove
+            $0.top.equalToSuperview().offset(Constants.offset * 3)
+            $0.leading.equalToSuperview().offset(Constants.offset)
             $0.trailing.equalToSuperview().inset(Constants.inset)
         }
     }
@@ -94,8 +109,16 @@ final class HomeViewController: UIViewController {
 
     @objc private func searchButtonTapped() {
         guard let text = searchBar.text, !text.isEmpty else { return }
-        print(text)
+        networkService.fetchAIGeneratedImageUsing(description: text) { result in
+            switch result {
+            case let .success(image):
+                self.imageView.image = image
+            case .failure:
+                print("No")
+            }
+        }
         hideKeyboard()
+
     }
 
 }
@@ -104,14 +127,4 @@ extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
          searchButtonTapped()
      }
-}
-
-extension UIButton {
-    convenience init(systemImage: String, imageFontSize: CGFloat) {
-        self.init()
-        translatesAutoresizingMaskIntoConstraints = false
-        let systemImageConfiguration = UIImage.SymbolConfiguration(pointSize: imageFontSize, weight: .regular)
-        let image = UIImage(systemName: systemImage)?.withConfiguration(systemImageConfiguration)
-        setImage(image, for: .normal)
-    }
 }

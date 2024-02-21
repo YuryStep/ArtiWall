@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		466A68D3B619E6BF8B98F2AA /* Pods_ArtiWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D294D57BACE4F7FFE862DA /* Pods_ArtiWall.framework */; };
 		EF46CABF2B84DA3800ECEB40 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF46CABE2B84DA3800ECEB40 /* Colors.xcassets */; };
+		EF46CAC32B85E7BA00ECEB40 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CAC22B85E7BA00ECEB40 /* NetworkService.swift */; };
+		EF46CAC62B85EE3F00ECEB40 /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CAC52B85EE3F00ECEB40 /* APIBuilder.swift */; };
+		EF46CAC82B85F4E800ECEB40 /* AIGeneratedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CAC72B85F4E800ECEB40 /* AIGeneratedModel.swift */; };
+		EF46CACC2B86561400ECEB40 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CACB2B86561400ECEB40 /* NetworkError.swift */; };
+		EF46CACF2B86803E00ECEB40 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CACE2B86803D00ECEB40 /* UIButton+Extensions.swift */; };
 		EFAE42C62B83EFCE009F1C3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */; };
 		EFAE42C82B83F026009F1C3F /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C72B83F026009F1C3F /* .swiftformat */; };
 		EFB7A0FC2B83543F00613834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A0FB2B83543F00613834 /* AppDelegate.swift */; };
 		EFB7A0FE2B83543F00613834 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A0FD2B83543F00613834 /* SceneDelegate.swift */; };
-		EFB7A1002B83543F00613834 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A0FF2B83543F00613834 /* ViewController.swift */; };
+		EFB7A1002B83543F00613834 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A0FF2B83543F00613834 /* HomeViewController.swift */; };
 		EFB7A1052B83544100613834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFB7A1042B83544100613834 /* Assets.xcassets */; };
 		EFB7A1082B83544100613834 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB7A1062B83544100613834 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -23,12 +28,17 @@
 		5BBECCC33CE5B66F4A8EE2E5 /* Pods-ArtiWall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtiWall.debug.xcconfig"; path = "Target Support Files/Pods-ArtiWall/Pods-ArtiWall.debug.xcconfig"; sourceTree = "<group>"; };
 		A64B4EA5E2C2345BDD367176 /* Pods-ArtiWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtiWall.release.xcconfig"; path = "Target Support Files/Pods-ArtiWall/Pods-ArtiWall.release.xcconfig"; sourceTree = "<group>"; };
 		EF46CABE2B84DA3800ECEB40 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		EF46CAC22B85E7BA00ECEB40 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		EF46CAC52B85EE3F00ECEB40 /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
+		EF46CAC72B85F4E800ECEB40 /* AIGeneratedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGeneratedModel.swift; sourceTree = "<group>"; };
+		EF46CACB2B86561400ECEB40 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		EF46CACE2B86803D00ECEB40 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EFAE42C72B83F026009F1C3F /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		EFB7A0F82B83543F00613834 /* ArtiWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtiWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB7A0FB2B83543F00613834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFB7A0FD2B83543F00613834 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EFB7A0FF2B83543F00613834 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EFB7A0FF2B83543F00613834 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EFB7A1042B83544100613834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFB7A1072B83544100613834 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFB7A1092B83544100613834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +93,32 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EF46CAC42B85E7C800ECEB40 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EF46CAC52B85EE3F00ECEB40 /* APIBuilder.swift */,
+				EF46CAC22B85E7BA00ECEB40 /* NetworkService.swift */,
+				EF46CACB2B86561400ECEB40 /* NetworkError.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EF46CACD2B866CC700ECEB40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF46CAC72B85F4E800ECEB40 /* AIGeneratedModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF46CAD02B86805F00ECEB40 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF46CACE2B86803D00ECEB40 /* UIButton+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EFB7A0EF2B83543F00613834 = {
 			isa = PBXGroup;
 			children = (
@@ -106,9 +142,12 @@
 		EFB7A0FA2B83543F00613834 /* ArtiWall */ = {
 			isa = PBXGroup;
 			children = (
+				EF46CACD2B866CC700ECEB40 /* Model */,
+				EF46CAC42B85E7C800ECEB40 /* Services */,
 				EF46CABD2B84DA1700ECEB40 /* Root */,
-				EFB7A0FF2B83543F00613834 /* ViewController.swift */,
+				EFB7A0FF2B83543F00613834 /* HomeViewController.swift */,
 				EF46CAC02B84DE3000ECEB40 /* Supporting Files */,
+				EF46CAD02B86805F00ECEB40 /* Extensions */,
 			);
 			path = ArtiWall;
 			sourceTree = "<group>";
@@ -120,8 +159,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFB7A10C2B83544100613834 /* Build configuration list for PBXNativeTarget "ArtiWall" */;
 			buildPhases = (
-				EFDC71FA2B83E32A0022EB9E /* Run Script SwiftLint */,
 				3E1C29A034939053AD3A286D /* [CP] Check Pods Manifest.lock */,
+				EFDC71FA2B83E32A0022EB9E /* Run Script SwiftLint */,
 				EFB7A0F42B83543F00613834 /* Sources */,
 				EFB7A0F52B83543F00613834 /* Frameworks */,
 				EFB7A0F62B83543F00613834 /* Resources */,
@@ -250,8 +289,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFB7A1002B83543F00613834 /* ViewController.swift in Sources */,
+				EFB7A1002B83543F00613834 /* HomeViewController.swift in Sources */,
+				EF46CACF2B86803E00ECEB40 /* UIButton+Extensions.swift in Sources */,
+				EF46CACC2B86561400ECEB40 /* NetworkError.swift in Sources */,
+				EF46CAC82B85F4E800ECEB40 /* AIGeneratedModel.swift in Sources */,
 				EFB7A0FC2B83543F00613834 /* AppDelegate.swift in Sources */,
+				EF46CAC32B85E7BA00ECEB40 /* NetworkService.swift in Sources */,
+				EF46CAC62B85EE3F00ECEB40 /* APIBuilder.swift in Sources */,
 				EFB7A0FE2B83543F00613834 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
