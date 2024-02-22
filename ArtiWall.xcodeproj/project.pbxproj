@@ -21,6 +21,12 @@
 		EFB7A1002B83543F00613834 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A0FF2B83543F00613834 /* HomeViewController.swift */; };
 		EFB7A1052B83544100613834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFB7A1042B83544100613834 /* Assets.xcassets */; };
 		EFB7A1082B83544100613834 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFB7A1062B83544100613834 /* LaunchScreen.storyboard */; };
+		EFEF4A5B2B8750FA00C207C2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF4A5A2B8750FA00C207C2 /* UIView+Extensions.swift */; };
+		EFEF4A5E2B87555400C207C2 /* plane.json in Resources */ = {isa = PBXBuildFile; fileRef = EFEF4A5D2B87555400C207C2 /* plane.json */; };
+		EFEF4A602B8758A600C207C2 /* CoverLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF4A5F2B8758A600C207C2 /* CoverLoaderViewController.swift */; };
+		EFEF4A622B87709600C207C2 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF4A612B87709500C207C2 /* UILabel+Extensions.swift */; };
+		EFEF4A642B87717000C207C2 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF4A632B87717000C207C2 /* UIFont+Extensions.swift */; };
+		EFEF4A662B878A7E00C207C2 /* Mister Brush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFEF4A652B878A7E00C207C2 /* Mister Brush.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		EFB7A1042B83544100613834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFB7A1072B83544100613834 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFB7A1092B83544100613834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFEF4A5A2B8750FA00C207C2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		EFEF4A5D2B87555400C207C2 /* plane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane.json; sourceTree = "<group>"; };
+		EFEF4A5F2B8758A600C207C2 /* CoverLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverLoaderViewController.swift; sourceTree = "<group>"; };
+		EFEF4A612B87709500C207C2 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		EFEF4A632B87717000C207C2 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		EFEF4A652B878A7E00C207C2 /* Mister Brush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mister Brush.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +97,8 @@
 		EF46CAC02B84DE3000ECEB40 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EFEF4A672B878A8300C207C2 /* Custom fonts */,
+				EFEF4A682B878A9800C207C2 /* Lottie animations */,
 				EFB7A1042B83544100613834 /* Assets.xcassets */,
 				EF46CABE2B84DA3800ECEB40 /* Colors.xcassets */,
 				EFB7A1062B83544100613834 /* LaunchScreen.storyboard */,
@@ -115,6 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				EF46CACE2B86803D00ECEB40 /* UIButton+Extensions.swift */,
+				EFEF4A5A2B8750FA00C207C2 /* UIView+Extensions.swift */,
+				EFEF4A612B87709500C207C2 /* UILabel+Extensions.swift */,
+				EFEF4A632B87717000C207C2 /* UIFont+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -146,10 +163,27 @@
 				EF46CAC42B85E7C800ECEB40 /* Services */,
 				EF46CABD2B84DA1700ECEB40 /* Root */,
 				EFB7A0FF2B83543F00613834 /* HomeViewController.swift */,
-				EF46CAC02B84DE3000ECEB40 /* Supporting Files */,
+				EFEF4A5F2B8758A600C207C2 /* CoverLoaderViewController.swift */,
 				EF46CAD02B86805F00ECEB40 /* Extensions */,
+				EF46CAC02B84DE3000ECEB40 /* Supporting Files */,
 			);
 			path = ArtiWall;
+			sourceTree = "<group>";
+		};
+		EFEF4A672B878A8300C207C2 /* Custom fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EFEF4A652B878A7E00C207C2 /* Mister Brush.ttf */,
+			);
+			path = "Custom fonts";
+			sourceTree = "<group>";
+		};
+		EFEF4A682B878A9800C207C2 /* Lottie animations */ = {
+			isa = PBXGroup;
+			children = (
+				EFEF4A5D2B87555400C207C2 /* plane.json */,
+			);
+			path = "Lottie animations";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +251,8 @@
 				EFAE42C82B83F026009F1C3F /* .swiftformat in Resources */,
 				EFAE42C62B83EFCE009F1C3F /* .swiftlint.yml in Resources */,
 				EFB7A1082B83544100613834 /* LaunchScreen.storyboard in Resources */,
+				EFEF4A5E2B87555400C207C2 /* plane.json in Resources */,
+				EFEF4A662B878A7E00C207C2 /* Mister Brush.ttf in Resources */,
 				EFB7A1052B83544100613834 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,11 +327,15 @@
 			files = (
 				EFB7A1002B83543F00613834 /* HomeViewController.swift in Sources */,
 				EF46CACF2B86803E00ECEB40 /* UIButton+Extensions.swift in Sources */,
+				EFEF4A622B87709600C207C2 /* UILabel+Extensions.swift in Sources */,
+				EFEF4A5B2B8750FA00C207C2 /* UIView+Extensions.swift in Sources */,
+				EFEF4A602B8758A600C207C2 /* CoverLoaderViewController.swift in Sources */,
 				EF46CACC2B86561400ECEB40 /* NetworkError.swift in Sources */,
 				EF46CAC82B85F4E800ECEB40 /* AIGeneratedModel.swift in Sources */,
 				EFB7A0FC2B83543F00613834 /* AppDelegate.swift in Sources */,
 				EF46CAC32B85E7BA00ECEB40 /* NetworkService.swift in Sources */,
 				EF46CAC62B85EE3F00ECEB40 /* APIBuilder.swift in Sources */,
+				EFEF4A642B87717000C207C2 /* UIFont+Extensions.swift in Sources */,
 				EFB7A0FE2B83543F00613834 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
