@@ -9,12 +9,12 @@
 import Foundation
 
 struct AIGeneratedModel: Codable {
-    let status, tip: String
-    let generationTime: Double
-    let id: Int
+    let status, tip: String?
+    let generationTime: Double?
+    let id: Int?
     let output, proxyLinks: [String]
-    let nsfwContentDetected: String
-    let meta: Meta
+    let nsfwContentDetected: String?
+    let meta: Meta?
 
     enum CodingKeys: String, CodingKey {
         case status, tip, generationTime, id, output
@@ -25,15 +25,15 @@ struct AIGeneratedModel: Codable {
 }
 
 struct Meta: Codable {
-    let h, w: Int
-    let enableAttentionSlicing, filePrefix: String
-    let guidanceScale: Double
+    let h, w: Int?
+    let enableAttentionSlicing, filePrefix: String?
+    let guidanceScale: Double?
     let instantResponse, model: String
     let nSamples: Int
     let negativePrompt, outdir, prompt, revision: String
     let safetychecker: String
-    let seed, steps: Int
-    let temp, vae: String
+    let seed, steps: Int?
+    let temp, vae: String?
 
     enum CodingKeys: String, CodingKey {
         case h = "H"

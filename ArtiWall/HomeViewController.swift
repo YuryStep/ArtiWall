@@ -31,11 +31,12 @@ final class HomeViewController: UIViewController {
         return searchBar
     }()
 
-    private lazy var searchButton: UIButton = {
-        let button = UIButton(systemImage: Constants.searchButtonImage, imageFontSize: 30)
-        button.backgroundColor = .appPink
-        button.layer.cornerRadius = 15
-        button.layer.borderColor = UIColor.white.cgColor
+    private lazy var searchButton: RoundIconButton = {
+        let button = RoundIconButton(
+            withIcon: .arrowUpCircleFill,
+            iconBackgroundColor: .systemGray5,
+            iconTintColor: .appPink,
+            iconSize: 25)
         button.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -43,10 +44,6 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        UIFont.familyNames.sorted().forEach {
-            let names = UIFont.fontNames(forFamilyName: $0)
-            print("Family: \($0) Font names: \(names)")
-        }
     }
 
     private func setupView() {
@@ -101,6 +98,23 @@ final class HomeViewController: UIViewController {
         guard let text = searchBar.text, !text.isEmpty else { return }
         hideKeyboard()
         showCoverLoader()
+        getGeneratedImage(text: text) // TODO: Move to Presenter
+    }
+
+    let networkService = NetworkService(apiBuilder: APIBuilder()) // TODO: Move to Presenter
+
+    private func getGeneratedImage(text: String) {
+        networkService.fetchAIGeneratedImageUsing(description: text) { [weak self] result in // TODO: Move to Presenter
+            guard let self else { return }
+            switch result {
+            case let .success(image):
+                closeCoverLoader()
+                showGeneratedWallpaper(with: image)
+            case .failure:
+                print("No image recieved")
+                closeCoverLoader()
+            }
+        }
     }
 
     func showCoverLoader() {
@@ -109,6 +123,20 @@ final class HomeViewController: UIViewController {
         present(coverLoader, animated: true)
         coverLoader.startAnimating()
     }
+
+    func closeCoverLoader() {
+        if let coverLoader = presentedViewController as? CoverLoaderViewController {
+            coverLoader.stopAnimating()
+            coverLoader.dismiss(animated: true, completion: nil)
+        }
+    }
+
+    func showGeneratedWallpaper(with generatedImage: UIImage) {
+        let wallpaperController = WallpaperResultViewController(image: generatedImage)
+        wallpaperController.modalPresentationStyle = .overFullScreen
+        present(wallpaperController, animated: true)
+    }
+
 }
 
 extension HomeViewController: UISearchBarDelegate {
