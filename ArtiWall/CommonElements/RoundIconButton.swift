@@ -8,6 +8,9 @@
 import UIKit
 
 class RoundIconButton: UIButton {
+    private enum Constants {
+        static let defaultIconSize: CGFloat = 35
+    }
     enum Icon: String {
         case arrowDownCircleFill = "arrow.down.circle.fill"
         case arrowUpCircleFill = "arrow.up.circle.fill"
@@ -21,7 +24,12 @@ class RoundIconButton: UIButton {
     private let iconTintColor: UIColor
     private let iconSize: CGFloat
 
-    init(withIcon icon: Icon, iconBackgroundColor: UIColor, iconTintColor: UIColor, iconSize: CGFloat) {
+    init(
+        withIcon icon: Icon,
+        iconBackgroundColor: UIColor = .systemGray5,
+        iconTintColor: UIColor = .black,
+        iconSize: CGFloat = Constants.defaultIconSize
+    ) {
         iconName = icon.rawValue
         self.iconBackgroundColor = iconBackgroundColor
         self.iconTintColor = iconTintColor
@@ -36,7 +44,7 @@ class RoundIconButton: UIButton {
     }
 
     private func initialSetup() {
-        let imageConfiguration = UIImage.SymbolConfiguration(pointSize: iconSize, weight: .bold, scale: .medium)
+        let imageConfiguration = UIImage.SymbolConfiguration(pointSize: iconSize, weight: .regular, scale: .medium)
         let image = UIImage(systemName: iconName, withConfiguration: imageConfiguration)
         setImage(image, for: .normal)
         backgroundColor = iconBackgroundColor

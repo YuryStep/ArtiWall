@@ -14,7 +14,7 @@ final class HomeViewController: UIViewController {
         static let offset = 10
         static let inset = 10
         static let searchBarHeight = 44
-        static let searchButtonImage = "arrow.up.circle"
+        static let searchButtonIconSize: CGFloat = 25
     }
 
     private lazy var searchBar: UISearchBar = {
@@ -34,9 +34,8 @@ final class HomeViewController: UIViewController {
     private lazy var searchButton: RoundIconButton = {
         let button = RoundIconButton(
             withIcon: .arrowUpCircleFill,
-            iconBackgroundColor: .systemGray5,
             iconTintColor: .appPink,
-            iconSize: 25)
+            iconSize: Constants.searchButtonIconSize)
         button.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -133,6 +132,7 @@ final class HomeViewController: UIViewController {
 
     func showGeneratedWallpaper(with generatedImage: UIImage) {
         let wallpaperController = WallpaperResultViewController(image: generatedImage)
+        wallpaperController.delegate = self
         wallpaperController.modalPresentationStyle = .overFullScreen
         present(wallpaperController, animated: true)
     }
@@ -143,4 +143,18 @@ extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
          searchButtonTapped()
      }
+}
+
+extension HomeViewController: ResultViewControllerDelegate {
+    func backButtonTapped() {
+        dismiss(animated: true) // TODO: MOVE to presenter
+    }
+
+    func saveButtonTapped() {
+        print("saveButtonTapped") // TODO: MOVE to presenter
+    }
+
+    func showTimeButtonTapped() {
+        print("showTimeButtonTapped") // TODO: MOVE to presenter
+    }
 }

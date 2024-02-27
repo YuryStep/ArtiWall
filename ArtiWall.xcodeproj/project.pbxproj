@@ -137,6 +137,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		EF9315E12B8CF3EE00BD3198 /* CommonElements */ = {
+			isa = PBXGroup;
+			children = (
+				EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */,
+			);
+			path = CommonElements;
+			sourceTree = "<group>";
+		};
 		EFB7A0EF2B83543F00613834 = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +174,7 @@
 				EFB7A0FF2B83543F00613834 /* HomeViewController.swift */,
 				EFEF4A5F2B8758A600C207C2 /* CoverLoaderViewController.swift */,
 				EFEF4A6B2B8792BB00C207C2 /* WallpaperResultViewController.swift */,
-				EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */,
+				EF9315E12B8CF3EE00BD3198 /* CommonElements */,
 				EF46CAD02B86805F00ECEB40 /* Extensions */,
 				EF46CAC02B84DE3000ECEB40 /* Supporting Files */,
 			);

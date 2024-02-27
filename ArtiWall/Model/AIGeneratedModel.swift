@@ -28,10 +28,10 @@ struct Meta: Codable {
     let h, w: Int?
     let enableAttentionSlicing, filePrefix: String?
     let guidanceScale: Double?
-    let instantResponse, model: String
-    let nSamples: Int
-    let negativePrompt, outdir, prompt, revision: String
-    let safetychecker: String
+    let instantResponse, model: String?
+    let nSamples: Int?
+    let negativePrompt, outdir, prompt, revision: String?
+    let safetychecker: String?
     let seed, steps: Int?
     let temp, vae: String?
 
