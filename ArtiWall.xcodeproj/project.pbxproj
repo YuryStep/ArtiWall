@@ -13,6 +13,18 @@
 		EF46CAC62B85EE3F00ECEB40 /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CAC52B85EE3F00ECEB40 /* APIBuilder.swift */; };
 		EF46CAC82B85F4E800ECEB40 /* AIGeneratedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CAC72B85F4E800ECEB40 /* AIGeneratedModel.swift */; };
 		EF46CACC2B86561400ECEB40 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CACB2B86561400ECEB40 /* NetworkError.swift */; };
+		EF66F2F92B8E42F00098FA78 /* PopupErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F2F82B8E42F00098FA78 /* PopupErrorViewController.swift */; };
+		EF66F2FC2B8E606D0098FA78 /* PopupDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F2FB2B8E606D0098FA78 /* PopupDismissalTransition.swift */; };
+		EF66F2FE2B8E60880098FA78 /* PopupPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F2FD2B8E60880098FA78 /* PopupPresentationTransition.swift */; };
+		EF66F3052B8F19D90098FA78 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3042B8F19D90098FA78 /* HomePresenter.swift */; };
+		EF66F3072B8F1CC90098FA78 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3062B8F1CC90098FA78 /* ResultPresenter.swift */; };
+		EF66F3092B8F1DA50098FA78 /* PopupErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3082B8F1DA50098FA78 /* PopupErrorPresenter.swift */; };
+		EF66F30B2B8F1F910098FA78 /* CoverLoaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F30A2B8F1F910098FA78 /* CoverLoaderPresenter.swift */; };
+		EF66F30D2B8F42A20098FA78 /* HomeModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F30C2B8F42A20098FA78 /* HomeModuleAssembly.swift */; };
+		EF66F30F2B8F7A390098FA78 /* CoverLoaderModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F30E2B8F7A390098FA78 /* CoverLoaderModuleAssembly.swift */; };
+		EF66F3112B8F7B760098FA78 /* PopupErrorModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3102B8F7B760098FA78 /* PopupErrorModuleAssembly.swift */; };
+		EF66F3132B8F7C6D0098FA78 /* ResultModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3122B8F7C6D0098FA78 /* ResultModuleAssembly.swift */; };
+		EF66F3152B8F9C7D0098FA78 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3142B8F9C7D0098FA78 /* UIViewController+Extensions.swift */; };
 		EF9315E02B8CA37700BD3198 /* RoundIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */; };
 		EFAE42C62B83EFCE009F1C3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */; };
 		EFAE42C82B83F026009F1C3F /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C72B83F026009F1C3F /* .swiftformat */; };
@@ -27,7 +39,7 @@
 		EFEF4A622B87709600C207C2 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF4A612B87709500C207C2 /* UILabel+Extensions.swift */; };
 		EFEF4A642B87717000C207C2 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF4A632B87717000C207C2 /* UIFont+Extensions.swift */; };
 		EFEF4A662B878A7E00C207C2 /* Mister Brush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFEF4A652B878A7E00C207C2 /* Mister Brush.ttf */; };
-		EFEF4A6C2B8792BB00C207C2 /* WallpaperResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF4A6B2B8792BB00C207C2 /* WallpaperResultViewController.swift */; };
+		EFEF4A6C2B8792BB00C207C2 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF4A6B2B8792BB00C207C2 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +51,18 @@
 		EF46CAC52B85EE3F00ECEB40 /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
 		EF46CAC72B85F4E800ECEB40 /* AIGeneratedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGeneratedModel.swift; sourceTree = "<group>"; };
 		EF46CACB2B86561400ECEB40 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		EF66F2F82B8E42F00098FA78 /* PopupErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupErrorViewController.swift; sourceTree = "<group>"; };
+		EF66F2FB2B8E606D0098FA78 /* PopupDismissalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDismissalTransition.swift; sourceTree = "<group>"; };
+		EF66F2FD2B8E60880098FA78 /* PopupPresentationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPresentationTransition.swift; sourceTree = "<group>"; };
+		EF66F3042B8F19D90098FA78 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		EF66F3062B8F1CC90098FA78 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
+		EF66F3082B8F1DA50098FA78 /* PopupErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupErrorPresenter.swift; sourceTree = "<group>"; };
+		EF66F30A2B8F1F910098FA78 /* CoverLoaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverLoaderPresenter.swift; sourceTree = "<group>"; };
+		EF66F30C2B8F42A20098FA78 /* HomeModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleAssembly.swift; sourceTree = "<group>"; };
+		EF66F30E2B8F7A390098FA78 /* CoverLoaderModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverLoaderModuleAssembly.swift; sourceTree = "<group>"; };
+		EF66F3102B8F7B760098FA78 /* PopupErrorModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupErrorModuleAssembly.swift; sourceTree = "<group>"; };
+		EF66F3122B8F7C6D0098FA78 /* ResultModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModuleAssembly.swift; sourceTree = "<group>"; };
+		EF66F3142B8F9C7D0098FA78 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundIconButton.swift; sourceTree = "<group>"; };
 		EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EFAE42C72B83F026009F1C3F /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
@@ -55,7 +79,7 @@
 		EFEF4A612B87709500C207C2 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		EFEF4A632B87717000C207C2 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		EFEF4A652B878A7E00C207C2 /* Mister Brush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mister Brush.ttf"; sourceTree = "<group>"; };
-		EFEF4A6B2B8792BB00C207C2 /* WallpaperResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperResultViewController.swift; sourceTree = "<group>"; };
+		EFEF4A6B2B8792BB00C207C2 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +157,70 @@
 				EFEF4A5A2B8750FA00C207C2 /* UIView+Extensions.swift */,
 				EFEF4A612B87709500C207C2 /* UILabel+Extensions.swift */,
 				EFEF4A632B87717000C207C2 /* UIFont+Extensions.swift */,
+				EF66F3142B8F9C7D0098FA78 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EF66F2FA2B8E60450098FA78 /* PopupErrorModule */ = {
+			isa = PBXGroup;
+			children = (
+				EF66F3102B8F7B760098FA78 /* PopupErrorModuleAssembly.swift */,
+				EF66F3082B8F1DA50098FA78 /* PopupErrorPresenter.swift */,
+				EF66F2F82B8E42F00098FA78 /* PopupErrorViewController.swift */,
+				EF66F2FF2B8E60A90098FA78 /* CustomVCTransitions */,
+			);
+			path = PopupErrorModule;
+			sourceTree = "<group>";
+		};
+		EF66F2FF2B8E60A90098FA78 /* CustomVCTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				EF66F2FD2B8E60880098FA78 /* PopupPresentationTransition.swift */,
+				EF66F2FB2B8E606D0098FA78 /* PopupDismissalTransition.swift */,
+			);
+			path = CustomVCTransitions;
+			sourceTree = "<group>";
+		};
+		EF66F3002B8F19570098FA78 /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+				EF66F30C2B8F42A20098FA78 /* HomeModuleAssembly.swift */,
+				EF66F3042B8F19D90098FA78 /* HomePresenter.swift */,
+				EFB7A0FF2B83543F00613834 /* HomeViewController.swift */,
+			);
+			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		EF66F3012B8F19660098FA78 /* LoadingModule */ = {
+			isa = PBXGroup;
+			children = (
+				EF66F30E2B8F7A390098FA78 /* CoverLoaderModuleAssembly.swift */,
+				EF66F30A2B8F1F910098FA78 /* CoverLoaderPresenter.swift */,
+				EFEF4A5F2B8758A600C207C2 /* CoverLoaderViewController.swift */,
+			);
+			path = LoadingModule;
+			sourceTree = "<group>";
+		};
+		EF66F3022B8F19750098FA78 /* ResultModule */ = {
+			isa = PBXGroup;
+			children = (
+				EF66F3122B8F7C6D0098FA78 /* ResultModuleAssembly.swift */,
+				EF66F3062B8F1CC90098FA78 /* ResultPresenter.swift */,
+				EFEF4A6B2B8792BB00C207C2 /* ResultViewController.swift */,
+			);
+			path = ResultModule;
+			sourceTree = "<group>";
+		};
+		EF66F3032B8F19890098FA78 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EF66F3002B8F19570098FA78 /* HomeModule */,
+				EF66F3012B8F19660098FA78 /* LoadingModule */,
+				EF66F2FA2B8E60450098FA78 /* PopupErrorModule */,
+				EF66F3022B8F19750098FA78 /* ResultModule */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		EF9315E12B8CF3EE00BD3198 /* CommonElements */ = {
@@ -171,9 +257,7 @@
 				EF46CACD2B866CC700ECEB40 /* Model */,
 				EF46CAC42B85E7C800ECEB40 /* Services */,
 				EF46CABD2B84DA1700ECEB40 /* Root */,
-				EFB7A0FF2B83543F00613834 /* HomeViewController.swift */,
-				EFEF4A5F2B8758A600C207C2 /* CoverLoaderViewController.swift */,
-				EFEF4A6B2B8792BB00C207C2 /* WallpaperResultViewController.swift */,
+				EF66F3032B8F19890098FA78 /* Modules */,
 				EF9315E12B8CF3EE00BD3198 /* CommonElements */,
 				EF46CAD02B86805F00ECEB40 /* Extensions */,
 				EF46CAC02B84DE3000ECEB40 /* Supporting Files */,
@@ -341,11 +425,23 @@
 				EFEF4A5B2B8750FA00C207C2 /* UIView+Extensions.swift in Sources */,
 				EF9315E02B8CA37700BD3198 /* RoundIconButton.swift in Sources */,
 				EFEF4A602B8758A600C207C2 /* CoverLoaderViewController.swift in Sources */,
+				EF66F30D2B8F42A20098FA78 /* HomeModuleAssembly.swift in Sources */,
+				EF66F30B2B8F1F910098FA78 /* CoverLoaderPresenter.swift in Sources */,
 				EF46CACC2B86561400ECEB40 /* NetworkError.swift in Sources */,
+				EF66F2F92B8E42F00098FA78 /* PopupErrorViewController.swift in Sources */,
+				EF66F2FE2B8E60880098FA78 /* PopupPresentationTransition.swift in Sources */,
+				EF66F3132B8F7C6D0098FA78 /* ResultModuleAssembly.swift in Sources */,
+				EF66F30F2B8F7A390098FA78 /* CoverLoaderModuleAssembly.swift in Sources */,
 				EF46CAC82B85F4E800ECEB40 /* AIGeneratedModel.swift in Sources */,
-				EFEF4A6C2B8792BB00C207C2 /* WallpaperResultViewController.swift in Sources */,
+				EF66F3112B8F7B760098FA78 /* PopupErrorModuleAssembly.swift in Sources */,
+				EFEF4A6C2B8792BB00C207C2 /* ResultViewController.swift in Sources */,
+				EF66F3072B8F1CC90098FA78 /* ResultPresenter.swift in Sources */,
 				EFB7A0FC2B83543F00613834 /* AppDelegate.swift in Sources */,
 				EF46CAC32B85E7BA00ECEB40 /* NetworkService.swift in Sources */,
+				EF66F2FC2B8E606D0098FA78 /* PopupDismissalTransition.swift in Sources */,
+				EF66F3052B8F19D90098FA78 /* HomePresenter.swift in Sources */,
+				EF66F3092B8F1DA50098FA78 /* PopupErrorPresenter.swift in Sources */,
+				EF66F3152B8F9C7D0098FA78 /* UIViewController+Extensions.swift in Sources */,
 				EF46CAC62B85EE3F00ECEB40 /* APIBuilder.swift in Sources */,
 				EFEF4A642B87717000C207C2 /* UIFont+Extensions.swift in Sources */,
 				EFB7A0FE2B83543F00613834 /* SceneDelegate.swift in Sources */,

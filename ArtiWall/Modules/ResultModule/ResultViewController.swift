@@ -1,30 +1,36 @@
 //
-//  WallpaperResultViewController.swift
+//  ResultViewController.swift
 //  ArtiWall
 //
 //  Created by Юрий Степанчук on 22.02.2024.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
-protocol ResultViewControllerDelegate: AnyObject {
+protocol ResultViewOutput {
+    func getImage() -> UIImage
     func backButtonTapped()
     func saveButtonTapped()
     func showTimeButtonTapped()
 }
 
-final class WallpaperResultViewController: UIViewController {
+protocol ResultViewInput: AnyObject {
+
+}
+
+final class ResultViewController: UIViewController {
     private enum Constants {
         static let defaultOffset = 20
         static let defaultBottomInset = 30
     }
 
-    weak var delegate: ResultViewControllerDelegate?
+    var presenter: ResultViewOutput!
 
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.image = presenter.getImage()
         return imageView
     }()
 
@@ -45,16 +51,6 @@ final class WallpaperResultViewController: UIViewController {
         button.addTarget(self, action: #selector(showTimeButtonTapped), for: .touchUpInside)
         return button
     }()
-
-    init(image: UIImage) {
-        super.init(nibName: nil, bundle: nil)
-        imageView.image = image
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,14 +82,17 @@ final class WallpaperResultViewController: UIViewController {
     }
 
     @objc private func backButtonTapped() {
-        delegate?.backButtonTapped()
+        presenter.backButtonTapped()
+        navigationController?.popToRootViewController(animated: true)
     }
 
     @objc private func saveButtonTapped() {
-        delegate?.saveButtonTapped()
+        presenter.saveButtonTapped()
     }
 
     @objc private func showTimeButtonTapped() {
-        delegate?.showTimeButtonTapped()
+        presenter.showTimeButtonTapped()
     }
 }
+
+extension ResultViewController: ResultViewInput { }

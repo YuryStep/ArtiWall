@@ -5,9 +5,18 @@
 //  Created by Юрий Степанчук on 19.02.2024.
 //
 
-import UIKit
-import SnapKit
 import Lottie
+import SnapKit
+import UIKit
+
+protocol HomeViewOutput {
+    func searchButtonTapped()
+}
+
+protocol HomeViewInput: AnyObject {
+    func hideKeyboard()
+    func showCoverLoader()
+}
 
 final class HomeViewController: UIViewController {
     private enum Constants {
@@ -16,6 +25,8 @@ final class HomeViewController: UIViewController {
         static let searchBarHeight = 44
         static let searchButtonIconSize: CGFloat = 25
     }
+
+    var presenter: HomeViewOutput!
 
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -35,7 +46,8 @@ final class HomeViewController: UIViewController {
         let button = RoundIconButton(
             withIcon: .arrowUpCircleFill,
             iconTintColor: .appPink,
-            iconSize: Constants.searchButtonIconSize)
+            iconSize: Constants.searchButtonIconSize
+        )
         button.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -89,72 +101,26 @@ final class HomeViewController: UIViewController {
         view.addGestureRecognizer(tapRecognizer)
     }
 
-    @objc private func hideKeyboard() {
+    @objc private func searchButtonTapped() {
+        guard let text = searchBar.text, !text.isEmpty else { return }
+        presenter.searchButtonTapped()
+    }
+}
+
+extension HomeViewController: HomeViewInput {
+    @objc func hideKeyboard() {
         view.endEditing(true)
     }
 
-    @objc private func searchButtonTapped() {
-        guard let text = searchBar.text, !text.isEmpty else { return }
-        hideKeyboard()
-        showCoverLoader()
-        getGeneratedImage(text: text) // TODO: Move to Presenter
-    }
-
-    let networkService = NetworkService(apiBuilder: APIBuilder()) // TODO: Move to Presenter
-
-    private func getGeneratedImage(text: String) {
-        networkService.fetchAIGeneratedImageUsing(description: text) { [weak self] result in // TODO: Move to Presenter
-            guard let self else { return }
-            switch result {
-            case let .success(image):
-                closeCoverLoader()
-                showGeneratedWallpaper(with: image)
-            case .failure:
-                print("No image recieved")
-                closeCoverLoader()
-            }
-        }
-    }
-
     func showCoverLoader() {
-        let coverLoader = CoverLoaderViewController()
-        coverLoader.modalPresentationStyle = .overFullScreen
-        present(coverLoader, animated: true)
-        coverLoader.startAnimating()
+        guard let imageDescription = searchBar.text, !imageDescription.isEmpty else { return }
+        let coverLoader = CoverLoaderModuleAssembly.makeModule(with: imageDescription)
+        navigationController?.pushViewController(coverLoader, animated: false)
     }
-
-    func closeCoverLoader() {
-        if let coverLoader = presentedViewController as? CoverLoaderViewController {
-            coverLoader.stopAnimating()
-            coverLoader.dismiss(animated: true, completion: nil)
-        }
-    }
-
-    func showGeneratedWallpaper(with generatedImage: UIImage) {
-        let wallpaperController = WallpaperResultViewController(image: generatedImage)
-        wallpaperController.delegate = self
-        wallpaperController.modalPresentationStyle = .overFullScreen
-        present(wallpaperController, animated: true)
-    }
-
 }
 
 extension HomeViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-         searchButtonTapped()
-     }
-}
-
-extension HomeViewController: ResultViewControllerDelegate {
-    func backButtonTapped() {
-        dismiss(animated: true) // TODO: MOVE to presenter
-    }
-
-    func saveButtonTapped() {
-        print("saveButtonTapped") // TODO: MOVE to presenter
-    }
-
-    func showTimeButtonTapped() {
-        print("showTimeButtonTapped") // TODO: MOVE to presenter
+    func searchBarSearchButtonClicked(_: UISearchBar) {
+        presenter.searchButtonTapped()
     }
 }

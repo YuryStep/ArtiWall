@@ -1,13 +1,20 @@
 //
-//  CoverLoaderViewController.swift
+//  LoadingViewController.swift
 //  ArtiWall
 //
 //  Created by Юрий Степанчук on 22.02.2024.
 //
 
-import UIKit
-import SnapKit
 import Lottie
+import SnapKit
+import UIKit
+
+protocol CoverLoaderOutput { }
+
+protocol CoverLoaderInput: AnyObject {
+    func showPopupErrorAlert()
+    func showGeneratedWallpaper(with: UIImage)
+}
 
 final class CoverLoaderViewController: UIViewController {
     private enum Constants {
@@ -17,6 +24,8 @@ final class CoverLoaderViewController: UIViewController {
         static let labelTextSize: CGFloat = 30
         static let offsetTop = 15
     }
+
+    var presenter: CoverLoaderOutput!
 
     private var countdownTimer: Timer?
     private var countdownSeconds = Constants.countdownDuration
@@ -51,6 +60,11 @@ final class CoverLoaderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startAnimating()
     }
 
     private func setupView() {
@@ -99,5 +113,20 @@ final class CoverLoaderViewController: UIViewController {
 
     private func getTextForEstimatedTime(seconds: Int) -> String {
         return "Estimated time \(seconds) sec"
+    }
+}
+
+extension CoverLoaderViewController: CoverLoaderInput {
+    func showPopupErrorAlert() {
+        print("showPopupErrorAlert")
+        stopAnimating()
+        let popupError = PopupErrorModuleAssembly.makeModule()
+        self.present(popupError, animated: true)
+    }
+
+    func showGeneratedWallpaper(with image: UIImage) {
+        stopAnimating()
+        let resultViewController = ResultModuleAssembly.makeModule(with: image)
+        navigationController?.pushViewController(resultViewController, animated: false)
     }
 }

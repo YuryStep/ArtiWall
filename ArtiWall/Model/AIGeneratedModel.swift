@@ -48,4 +48,5 @@ struct Meta: Codable {
         case outdir, prompt, revision, safetychecker, seed, steps, temp, vae
     }
 }
+
 // swiftlint: enable identifier_name

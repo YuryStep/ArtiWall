@@ -11,6 +11,7 @@ class RoundIconButton: UIButton {
     private enum Constants {
         static let defaultIconSize: CGFloat = 35
     }
+
     enum Icon: String {
         case arrowDownCircleFill = "arrow.down.circle.fill"
         case arrowUpCircleFill = "arrow.up.circle.fill"
@@ -39,7 +40,7 @@ class RoundIconButton: UIButton {
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("This class does not support NSCoder")
     }
 
@@ -56,8 +57,8 @@ class RoundIconButton: UIButton {
         super.layoutSubviews()
         if let iconFrame = imageView?.frame {
             let squareSize = max(iconFrame.width, iconFrame.height)
-            self.widthAnchor.constraint(equalToConstant: squareSize).isActive = true
-            self.heightAnchor.constraint(equalToConstant: squareSize).isActive = true
+            widthAnchor.constraint(equalToConstant: squareSize).isActive = true
+            heightAnchor.constraint(equalToConstant: squareSize).isActive = true
         }
         layer.cornerRadius = min(frame.width, frame.height) / 2
     }

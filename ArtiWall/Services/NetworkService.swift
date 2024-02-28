@@ -51,7 +51,7 @@ final class NetworkService: AppNetworkService {
                    method: .post,
                    parameters: parameters).validate().responseDecodable(of: AIGeneratedModel.self) { response in
             switch response.result {
-            case .success(let value):
+            case let .success(value):
                 guard let imageURLString = value.output.first,
                       let imageURL = URL(string: imageURLString)
                 else {
@@ -60,7 +60,7 @@ final class NetworkService: AppNetworkService {
                 }
                 completion(.success(imageURL))
 
-            case .failure(let error):
+            case let .failure(error):
                 print(error)
             }
         }
