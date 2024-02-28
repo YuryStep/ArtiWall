@@ -67,13 +67,13 @@ final class PopupErrorViewController: UIViewController {
         return button
     }()
 
-    private let customTransition = PopupPresentationTransition()
-    private let customDismissalTransition = PopupDismissalTransition()
+    private let customTransition = CustomPresentationTransition()
+    private let customDismissalTransition = CustomDismissalTransition()
 
     init() {
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .overCurrentContext
-        transitioningDelegate = self
+//        transitioningDelegate = self
     }
 
     @available(*, unavailable)
@@ -124,13 +124,6 @@ final class PopupErrorViewController: UIViewController {
         }
     }
 
-    private func addBlurEffect() { // TODO: MOVE FROM HERE
-        let blurEffect = UIBlurEffect(style: .light)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = view.bounds
-        view.addSubview(blurView)
-    }
-
     @objc func tryAgainButtonTapped() {
         presenter.tryAgainButtonTapped()
     }
@@ -140,22 +133,12 @@ final class PopupErrorViewController: UIViewController {
     }
 }
 
-extension PopupErrorViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented _: UIViewController, presenting _: UIViewController, source _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return customTransition
-    }
-
-    func animationController(forDismissed _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return customDismissalTransition
-    }
-}
-
 extension PopupErrorViewController: PopupErrorInput {
     func goBackToHomeView() {
-        dismiss(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
 
     func retryLoading() {
-        print("retryLoading")
+        navigationController?.popViewController(animated: true)
     }
 }

@@ -61,7 +61,7 @@ final class NetworkService: AppNetworkService {
                 completion(.success(imageURL))
 
             case let .failure(error):
-                print(error)
+                completion(.failure(.decodingFailed))
             }
         }
     }

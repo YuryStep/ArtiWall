@@ -9,7 +9,9 @@ import Lottie
 import SnapKit
 import UIKit
 
-protocol CoverLoaderOutput { }
+protocol CoverLoaderOutput {
+    func startImageLoading()
+}
 
 protocol CoverLoaderInput: AnyObject {
     func showPopupErrorAlert()
@@ -65,6 +67,7 @@ final class CoverLoaderViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startAnimating()
+        presenter.startImageLoading()
     }
 
     private func setupView() {
@@ -120,13 +123,13 @@ extension CoverLoaderViewController: CoverLoaderInput {
     func showPopupErrorAlert() {
         print("showPopupErrorAlert")
         stopAnimating()
-        let popupError = PopupErrorModuleAssembly.makeModule()
-        self.present(popupError, animated: true)
+        let popupErrorController = PopupErrorModuleAssembly.makeModule()
+        navigationController?.pushViewController(popupErrorController, animated: true)
     }
 
     func showGeneratedWallpaper(with image: UIImage) {
         stopAnimating()
         let resultViewController = ResultModuleAssembly.makeModule(with: image)
-        navigationController?.pushViewController(resultViewController, animated: false)
+        navigationController?.pushViewController(resultViewController, animated: true)
     }
 }

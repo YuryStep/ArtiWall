@@ -18,6 +18,12 @@ final class CoverLoaderPresenter {
         self.view = view
         self.networkService = networkService
         self.state = State(imageDescription: imageDescription)
+    }
+}
+
+extension CoverLoaderPresenter: CoverLoaderOutput {
+    func startImageLoading() {
+        print(state.imageDescription)
         getGeneratedImage(text: state.imageDescription)
     }
 
@@ -33,5 +39,3 @@ final class CoverLoaderPresenter {
         }
     }
 }
-
-extension CoverLoaderPresenter: CoverLoaderOutput { }

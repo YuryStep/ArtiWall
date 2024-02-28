@@ -115,7 +115,7 @@ extension HomeViewController: HomeViewInput {
     func showCoverLoader() {
         guard let imageDescription = searchBar.text, !imageDescription.isEmpty else { return }
         let coverLoader = CoverLoaderModuleAssembly.makeModule(with: imageDescription)
-        navigationController?.pushViewController(coverLoader, animated: false)
+        navigationController?.pushViewController(coverLoader, animated: true)
     }
 }
 

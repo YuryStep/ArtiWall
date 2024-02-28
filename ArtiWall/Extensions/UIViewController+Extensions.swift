@@ -9,8 +9,8 @@ import UIKit
 
 extension UIViewController {
     func wrappedInNavigationController() -> UINavigationController {
-        self.navigationItem.hidesBackButton = true
-        let wrappedController = UINavigationController(rootViewController: self)
+        navigationItem.hidesBackButton = true
+        let wrappedController = ArtiWallNavigationController(rootViewController: self)
         wrappedController.setNavigationBarHidden(true, animated: false)
         return wrappedController
     }

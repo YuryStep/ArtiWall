@@ -14,8 +14,8 @@
 		EF46CAC82B85F4E800ECEB40 /* AIGeneratedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CAC72B85F4E800ECEB40 /* AIGeneratedModel.swift */; };
 		EF46CACC2B86561400ECEB40 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CACB2B86561400ECEB40 /* NetworkError.swift */; };
 		EF66F2F92B8E42F00098FA78 /* PopupErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F2F82B8E42F00098FA78 /* PopupErrorViewController.swift */; };
-		EF66F2FC2B8E606D0098FA78 /* PopupDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F2FB2B8E606D0098FA78 /* PopupDismissalTransition.swift */; };
-		EF66F2FE2B8E60880098FA78 /* PopupPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F2FD2B8E60880098FA78 /* PopupPresentationTransition.swift */; };
+		EF66F2FC2B8E606D0098FA78 /* CustomDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F2FB2B8E606D0098FA78 /* CustomDismissalTransition.swift */; };
+		EF66F2FE2B8E60880098FA78 /* CustomPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F2FD2B8E60880098FA78 /* CustomPresentationTransition.swift */; };
 		EF66F3052B8F19D90098FA78 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3042B8F19D90098FA78 /* HomePresenter.swift */; };
 		EF66F3072B8F1CC90098FA78 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3062B8F1CC90098FA78 /* ResultPresenter.swift */; };
 		EF66F3092B8F1DA50098FA78 /* PopupErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3082B8F1DA50098FA78 /* PopupErrorPresenter.swift */; };
@@ -25,6 +25,7 @@
 		EF66F3112B8F7B760098FA78 /* PopupErrorModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3102B8F7B760098FA78 /* PopupErrorModuleAssembly.swift */; };
 		EF66F3132B8F7C6D0098FA78 /* ResultModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3122B8F7C6D0098FA78 /* ResultModuleAssembly.swift */; };
 		EF66F3152B8F9C7D0098FA78 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3142B8F9C7D0098FA78 /* UIViewController+Extensions.swift */; };
+		EF66F3172B8FACE30098FA78 /* ArtiWallNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3162B8FACE30098FA78 /* ArtiWallNavigationController.swift */; };
 		EF9315E02B8CA37700BD3198 /* RoundIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */; };
 		EFAE42C62B83EFCE009F1C3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */; };
 		EFAE42C82B83F026009F1C3F /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C72B83F026009F1C3F /* .swiftformat */; };
@@ -52,8 +53,8 @@
 		EF46CAC72B85F4E800ECEB40 /* AIGeneratedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGeneratedModel.swift; sourceTree = "<group>"; };
 		EF46CACB2B86561400ECEB40 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		EF66F2F82B8E42F00098FA78 /* PopupErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupErrorViewController.swift; sourceTree = "<group>"; };
-		EF66F2FB2B8E606D0098FA78 /* PopupDismissalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDismissalTransition.swift; sourceTree = "<group>"; };
-		EF66F2FD2B8E60880098FA78 /* PopupPresentationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPresentationTransition.swift; sourceTree = "<group>"; };
+		EF66F2FB2B8E606D0098FA78 /* CustomDismissalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDismissalTransition.swift; sourceTree = "<group>"; };
+		EF66F2FD2B8E60880098FA78 /* CustomPresentationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationTransition.swift; sourceTree = "<group>"; };
 		EF66F3042B8F19D90098FA78 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		EF66F3062B8F1CC90098FA78 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
 		EF66F3082B8F1DA50098FA78 /* PopupErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupErrorPresenter.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		EF66F3102B8F7B760098FA78 /* PopupErrorModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupErrorModuleAssembly.swift; sourceTree = "<group>"; };
 		EF66F3122B8F7C6D0098FA78 /* ResultModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModuleAssembly.swift; sourceTree = "<group>"; };
 		EF66F3142B8F9C7D0098FA78 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		EF66F3162B8FACE30098FA78 /* ArtiWallNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtiWallNavigationController.swift; sourceTree = "<group>"; };
 		EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundIconButton.swift; sourceTree = "<group>"; };
 		EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EFAE42C72B83F026009F1C3F /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
@@ -168,18 +170,18 @@
 				EF66F3102B8F7B760098FA78 /* PopupErrorModuleAssembly.swift */,
 				EF66F3082B8F1DA50098FA78 /* PopupErrorPresenter.swift */,
 				EF66F2F82B8E42F00098FA78 /* PopupErrorViewController.swift */,
-				EF66F2FF2B8E60A90098FA78 /* CustomVCTransitions */,
 			);
 			path = PopupErrorModule;
 			sourceTree = "<group>";
 		};
-		EF66F2FF2B8E60A90098FA78 /* CustomVCTransitions */ = {
+		EF66F2FF2B8E60A90098FA78 /* CustomNavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				EF66F2FD2B8E60880098FA78 /* PopupPresentationTransition.swift */,
-				EF66F2FB2B8E606D0098FA78 /* PopupDismissalTransition.swift */,
+				EF66F3162B8FACE30098FA78 /* ArtiWallNavigationController.swift */,
+				EF66F2FD2B8E60880098FA78 /* CustomPresentationTransition.swift */,
+				EF66F2FB2B8E606D0098FA78 /* CustomDismissalTransition.swift */,
 			);
-			path = CustomVCTransitions;
+			path = CustomNavigationController;
 			sourceTree = "<group>";
 		};
 		EF66F3002B8F19570098FA78 /* HomeModule */ = {
@@ -223,12 +225,21 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		EF9315E12B8CF3EE00BD3198 /* CommonElements */ = {
+		EF66F3182B8FCA0A0098FA78 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EF66F2FF2B8E60A90098FA78 /* CustomNavigationController */,
+				EF9315E12B8CF3EE00BD3198 /* CommonUI */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EF9315E12B8CF3EE00BD3198 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
 				EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */,
 			);
-			path = CommonElements;
+			path = CommonUI;
 			sourceTree = "<group>";
 		};
 		EFB7A0EF2B83543F00613834 = {
@@ -258,7 +269,7 @@
 				EF46CAC42B85E7C800ECEB40 /* Services */,
 				EF46CABD2B84DA1700ECEB40 /* Root */,
 				EF66F3032B8F19890098FA78 /* Modules */,
-				EF9315E12B8CF3EE00BD3198 /* CommonElements */,
+				EF66F3182B8FCA0A0098FA78 /* Utilities */,
 				EF46CAD02B86805F00ECEB40 /* Extensions */,
 				EF46CAC02B84DE3000ECEB40 /* Supporting Files */,
 			);
@@ -429,7 +440,7 @@
 				EF66F30B2B8F1F910098FA78 /* CoverLoaderPresenter.swift in Sources */,
 				EF46CACC2B86561400ECEB40 /* NetworkError.swift in Sources */,
 				EF66F2F92B8E42F00098FA78 /* PopupErrorViewController.swift in Sources */,
-				EF66F2FE2B8E60880098FA78 /* PopupPresentationTransition.swift in Sources */,
+				EF66F2FE2B8E60880098FA78 /* CustomPresentationTransition.swift in Sources */,
 				EF66F3132B8F7C6D0098FA78 /* ResultModuleAssembly.swift in Sources */,
 				EF66F30F2B8F7A390098FA78 /* CoverLoaderModuleAssembly.swift in Sources */,
 				EF46CAC82B85F4E800ECEB40 /* AIGeneratedModel.swift in Sources */,
@@ -438,7 +449,8 @@
 				EF66F3072B8F1CC90098FA78 /* ResultPresenter.swift in Sources */,
 				EFB7A0FC2B83543F00613834 /* AppDelegate.swift in Sources */,
 				EF46CAC32B85E7BA00ECEB40 /* NetworkService.swift in Sources */,
-				EF66F2FC2B8E606D0098FA78 /* PopupDismissalTransition.swift in Sources */,
+				EF66F3172B8FACE30098FA78 /* ArtiWallNavigationController.swift in Sources */,
+				EF66F2FC2B8E606D0098FA78 /* CustomDismissalTransition.swift in Sources */,
 				EF66F3052B8F19D90098FA78 /* HomePresenter.swift in Sources */,
 				EF66F3092B8F1DA50098FA78 /* PopupErrorPresenter.swift in Sources */,
 				EF66F3152B8F9C7D0098FA78 /* UIViewController+Extensions.swift in Sources */,
