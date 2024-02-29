@@ -10,6 +10,7 @@ import UIKit
 class RoundIconButton: UIButton {
     private enum Constants {
         static let defaultIconSize: CGFloat = 35
+        static let minimumHitAreaSize: CGFloat = 44
     }
 
     enum Icon: String {
@@ -20,18 +21,17 @@ class RoundIconButton: UIButton {
         case eyeSlashCircleFill = "eye.slash.circle.fill"
     }
 
-    private let iconName: String
+    private let buttonIcon: Icon
     private let iconBackgroundColor: UIColor
     private let iconTintColor: UIColor
     private let iconSize: CGFloat
 
-    init(
-        withIcon icon: Icon,
-        iconBackgroundColor: UIColor = .systemGray5,
-        iconTintColor: UIColor = .black,
-        iconSize: CGFloat = Constants.defaultIconSize
-    ) {
-        iconName = icon.rawValue
+    init(withIcon icon: Icon,
+         iconBackgroundColor: UIColor = .systemGray5,
+         iconTintColor: UIColor = .black,
+         iconSize: CGFloat = Constants.defaultIconSize)
+    {
+        buttonIcon = icon
         self.iconBackgroundColor = iconBackgroundColor
         self.iconTintColor = iconTintColor
         self.iconSize = iconSize
@@ -44,22 +44,6 @@ class RoundIconButton: UIButton {
         fatalError("This class does not support NSCoder")
     }
 
-    func setIcon(_ icon: Icon) {
-        let imageConfiguration = UIImage.SymbolConfiguration(pointSize: iconSize, weight: .regular, scale: .medium)
-        let image = UIImage(systemName: icon.rawValue, withConfiguration: imageConfiguration)
-        setImage(image, for: .normal)
-    }
-
-    private func initialSetup() {
-        let imageConfiguration = UIImage.SymbolConfiguration(pointSize: iconSize, weight: .regular, scale: .medium)
-        let image = UIImage(systemName: iconName, withConfiguration: imageConfiguration)
-        setImage(image, for: .normal)
-
-        backgroundColor = iconBackgroundColor
-        tintColor = iconTintColor
-        clipsToBounds = true
-    }
-
     override func layoutSubviews() {
         super.layoutSubviews()
         if let iconFrame = imageView?.frame {
@@ -68,5 +52,25 @@ class RoundIconButton: UIButton {
             heightAnchor.constraint(equalToConstant: squareSize).isActive = true
         }
         layer.cornerRadius = min(frame.width, frame.height) / 2
+    }
+
+    override func point(inside point: CGPoint, with _: UIEvent?) -> Bool {
+        let horizontalInset = -max(0, Constants.minimumHitAreaSize - bounds.width)
+        let verticalInset = -max(0, Constants.minimumHitAreaSize - bounds.height)
+        let increasedBounds = bounds.insetBy(dx: horizontalInset, dy: verticalInset)
+        return increasedBounds.contains(point)
+    }
+
+    func setIcon(_ icon: Icon) {
+        let imageConfiguration = UIImage.SymbolConfiguration(pointSize: iconSize, weight: .regular, scale: .medium)
+        let image = UIImage(systemName: icon.rawValue, withConfiguration: imageConfiguration)
+        setImage(image, for: .normal)
+    }
+
+    private func initialSetup() {
+        setIcon(buttonIcon)
+        backgroundColor = iconBackgroundColor
+        tintColor = iconTintColor
+        clipsToBounds = true
     }
 }
