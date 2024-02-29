@@ -8,6 +8,11 @@
 import UIKit
 
 final class ResultPresenter: NSObject {
+    private enum Constants {
+        static let photoSavedMessage = "Photo saved"
+        static let photoSavingErrorMessage = "There is some problems with saving photo"
+    }
+
     private struct State {
         var generatedImage: UIImage
     }
@@ -43,12 +48,13 @@ extension ResultPresenter: ResultViewOutput {
     }
 
     @objc private func savingToAlbum(_: UIImage, error: NSError?, contextInfo _: UnsafeRawPointer) {
-        if let error = error {
-            print("Ошибка сохранения изображения: \(error.localizedDescription)")
-        } else {
-            print("Изображение успешно сохранено в галерее")
+        guard error == nil else {
+            view?.showSavingStatusInfoView(message: Constants.photoSavingErrorMessage, isSaved: false)
             performHapticFeedback()
+            return
         }
+        view?.showSavingStatusInfoView(message: Constants.photoSavedMessage, isSaved: true)
+        performHapticFeedback()
     }
 
     private func performHapticFeedback() {

@@ -25,8 +25,8 @@
 import UIKit
 
 public protocol EasyTipViewDelegate : class {
-    func easyTipViewDidTap(_ tipView: EasyTipView)
-    func easyTipViewDidDismiss(_ tipView : EasyTipView)
+    func easyTipViewDidTap(_ savingStatusInfoView: EasyTipView)
+    func easyTipViewDidDismiss(_ savingStatusInfoView : EasyTipView)
 }
 
 

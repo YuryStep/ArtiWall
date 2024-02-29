@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PopupActionButton: UIButton {
+final class PopupActionButton: UIButton {
     init(title: String,
          backgroundColor: UIColor = .popUpReteyButton,
          titleColor: UIColor = .systemGray2,

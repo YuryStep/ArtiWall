@@ -23,6 +23,8 @@ final class HomeViewController: UIViewController {
         static let offset = 10
         static let inset = 10
         static let searchBarHeight = 44
+        static let searchBarCornerRadius: CGFloat = 15
+        static let searchBarBorderWidth: CGFloat = 3
         static let searchButtonIconSize: CGFloat = 25
     }
 
@@ -30,13 +32,13 @@ final class HomeViewController: UIViewController {
 
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.layer.borderWidth = 3
+        searchBar.layer.borderWidth = Constants.searchBarBorderWidth
         searchBar.layer.borderColor = UIColor.white.cgColor
         searchBar.keyboardAppearance = .dark
         searchBar.tintColor = .white
         searchBar.barTintColor = .clear
         searchBar.searchTextField.defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        searchBar.layer.cornerRadius = 15
+        searchBar.layer.cornerRadius = Constants.searchBarCornerRadius
         searchBar.searchTextField.leftView = nil
         searchBar.delegate = self
         return searchBar
@@ -48,6 +50,7 @@ final class HomeViewController: UIViewController {
             iconTintColor: .appPink,
             iconSize: Constants.searchButtonIconSize
         )
+
         button.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         return button
     }()

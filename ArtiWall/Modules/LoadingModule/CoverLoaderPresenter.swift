@@ -23,7 +23,6 @@ final class CoverLoaderPresenter {
 
 extension CoverLoaderPresenter: CoverLoaderOutput {
     func startImageLoading() {
-        print(state.imageDescription)
         getGeneratedImage(text: state.imageDescription)
     }
 

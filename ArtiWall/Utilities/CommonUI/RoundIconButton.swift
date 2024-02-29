@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RoundIconButton: UIButton {
+final class RoundIconButton: UIButton {
     private enum Constants {
         static let defaultIconSize: CGFloat = 35
         static let minimumHitAreaSize: CGFloat = 44

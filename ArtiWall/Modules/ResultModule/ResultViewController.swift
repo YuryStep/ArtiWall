@@ -5,8 +5,9 @@
 //  Created by Юрий Степанчук on 22.02.2024.
 //
 
-import SnapKit
 import UIKit
+import SnapKit
+import EasyTipView
 
 protocol ResultViewOutput {
     func getImage() -> UIImage
@@ -18,16 +19,20 @@ protocol ResultViewOutput {
 protocol ResultViewInput: AnyObject {
     func comebackToHomeView()
     func updateTimeLabelVisibility()
+    func showSavingStatusInfoView(message: String, isSaved: Bool)
 }
 
 final class ResultViewController: UIViewController {
     private enum Constants {
         static let defaultOffset = 20
         static let defaultBottomInset = 30
+        static let imageSavingTipTextSize: CGFloat = 14
+        static let imageSavingTipDismissInterval = 3.0
     }
 
     var presenter: ResultViewOutput!
 
+    private var savingStatusInfoView: EasyTipView?
     private var isTimeVisible = false
 
     private lazy var imageView: UIImageView = {
@@ -121,6 +126,24 @@ extension ResultViewController: ResultViewInput {
 
         if isTimeVisible {
             timeLabelView.updateDateTime()
+        }
+    }
+
+    func showSavingStatusInfoView(message: String, isSaved: Bool) {
+        savingStatusInfoView?.dismiss()
+
+        var preferences = EasyTipView.Preferences()
+        preferences.drawing.font = UIFont.systemFont(ofSize: Constants.imageSavingTipTextSize)
+        let backgroundColor: UIColor = isSaved ? .appPink : .systemRed
+        preferences.drawing.backgroundColor = backgroundColor
+        preferences.drawing.foregroundColor = .white
+        preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.bottom
+
+        savingStatusInfoView = EasyTipView(text: message, preferences: preferences)
+        savingStatusInfoView?.show(forView: saveButton, withinSuperview: view)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.imageSavingTipDismissInterval) { [weak self] in
+            self?.savingStatusInfoView?.dismiss()
         }
     }
 

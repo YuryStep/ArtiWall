@@ -115,17 +115,14 @@ final class CoverLoaderViewController: UIViewController {
 
 extension CoverLoaderViewController: CoverLoaderInput {
     func showPopupErrorAlert() {
-        print("showPopupErrorAlert")
         stopAnimating()
         let popupErrorController = PopupErrorModuleAssembly.makeModule()
         navigationController?.pushViewController(popupErrorController, animated: true)
     }
 
-    func showGeneratedWallpaper(with _: UIImage) {
+    func showGeneratedWallpaper(with image: UIImage) {
         stopAnimating()
-        let popupErrorController = PopupErrorModuleAssembly.makeModule()
-        navigationController?.pushViewController(popupErrorController, animated: true)
-//        let resultViewController = ResultModuleAssembly.makeModule(with: image)
-//        navigationController?.pushViewController(resultViewController, animated: true)
+        let resultViewController = ResultModuleAssembly.makeModule(with: image)
+        navigationController?.pushViewController(resultViewController, animated: true)
     }
 }
