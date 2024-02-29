@@ -16,7 +16,8 @@ protocol ResultViewOutput {
 }
 
 protocol ResultViewInput: AnyObject {
-
+    func comebackToHomeView()
+    func updateTimeLabelVisibility()
 }
 
 final class ResultViewController: UIViewController {
@@ -27,11 +28,19 @@ final class ResultViewController: UIViewController {
 
     var presenter: ResultViewOutput!
 
+    private var isTimeVisible = false
+
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.image = presenter.getImage()
         return imageView
+    }()
+
+    private lazy var timeLabelView: TimeLabelView = {
+        let view = TimeLabelView()
+        view.isHidden = true
+        return view
     }()
 
     private lazy var backButton: RoundIconButton = {
@@ -58,12 +67,18 @@ final class ResultViewController: UIViewController {
     }
 
     private func setupSubviews() {
-        view.addSubviews([imageView, backButton, saveButton, showTimeButton])
+        view.addSubviews([imageView, backButton, saveButton, showTimeButton, timeLabelView])
+
+        let guide = view.safeAreaLayoutGuide
+
         imageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
 
-        let guide = view.safeAreaLayoutGuide
+        timeLabelView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(backButton.snp.bottom)
+        }
 
         backButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(Constants.defaultOffset)
@@ -83,7 +98,6 @@ final class ResultViewController: UIViewController {
 
     @objc private func backButtonTapped() {
         presenter.backButtonTapped()
-        navigationController?.popToRootViewController(animated: true)
     }
 
     @objc private func saveButtonTapped() {
@@ -95,4 +109,23 @@ final class ResultViewController: UIViewController {
     }
 }
 
-extension ResultViewController: ResultViewInput { }
+extension ResultViewController: ResultViewInput {
+    func comebackToHomeView() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+
+    func updateTimeLabelVisibility() {
+        isTimeVisible.toggle()
+        updateShowTimeButtonIcon()
+        timeLabelView.isHidden = !isTimeVisible
+
+        if isTimeVisible {
+            timeLabelView.updateDateTime()
+        }
+    }
+
+    private func updateShowTimeButtonIcon() {
+        let newIcon: RoundIconButton.Icon = isTimeVisible ? .eyeSlashCircleFill : .eyeCircleFill
+        showTimeButton.setIcon(newIcon)
+    }
+}
