@@ -20,8 +20,15 @@ protocol PopupErrorInput: AnyObject {
 
 final class PopupErrorViewController: UIViewController {
     private enum Constants {
+        static let alertViewCornerRadius: CGFloat = 15
+        static let horizontalOffset = 20
+        static let verticalOffset = 10
         static let titleLabelTextSize: CGFloat = 35
         static let descriptionLabelTextSize: CGFloat = 27
+        static let titleLabelText = "oooops!"
+        static let descriptionLabelText = "something went wrong 🤯 we are terrible sorry 🥺 if you see that message at first time please try again. if you see few times in a row please try later or change your prompt 🙏🏻"
+        static let tryAgainButtonText = "Try Again"
+        static let cancelButtonText = "Cancel"
     }
 
     var presenter: PopupErrorOutput!
@@ -29,57 +36,35 @@ final class PopupErrorViewController: UIViewController {
     private lazy var alertView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = Constants.alertViewCornerRadius
         return view
     }()
 
     private lazy var titleLabel: UILabel = {
-        let label = UILabel(UIFont.appFont(.misterBrush, size: Constants.titleLabelTextSize))
-        label.textColor = .black
-        label.text = "oooops!"
-        label.textAlignment = .center
-        label.numberOfLines = 0
+        let misterBrushFont = UIFont.appFont(.misterBrush, size: Constants.titleLabelTextSize)
+        let label = UILabel(misterBrushFont, color: .black)
+        label.text = Constants.titleLabelText
         return label
     }()
 
     private lazy var descriptionLabel: UILabel = {
-        let label = UILabel(UIFont.appFont(.misterBrush, size: Constants.descriptionLabelTextSize))
-        label.textColor = .black
-        label.text = "something went wrong 🤯 we are terrible sorry 🥺 if you see that message at first time please try again. if you see few times in a row please try later or change your prompt 🙏🏻"
-        label.textAlignment = .center
-        label.numberOfLines = 0
+        let misterBrushFont = UIFont.appFont(.misterBrush, size: Constants.descriptionLabelTextSize)
+        let label = UILabel(misterBrushFont, color: .black)
+        label.text = Constants.descriptionLabelText
         return label
     }()
 
     private lazy var tryAgainButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
-        button.setTitle("Try Again", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(tryAgainButtonTapped), for: .touchUpInside)
-        return button
+        let tryAgainButton = PopupActionButton(title: Constants.tryAgainButtonText)
+        tryAgainButton.addTarget(self, action: #selector(tryAgainButtonTapped), for: .touchUpInside)
+        return tryAgainButton
     }()
 
     private lazy var cancelButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
-        button.setTitle("Cancel", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
-        return button
+        let cancelButton = PopupActionButton(title: Constants.cancelButtonText, backgroundColor: .clear)
+        cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        return cancelButton
     }()
-
-    private let customTransition = CustomPresentationTransition()
-    private let customDismissalTransition = CustomDismissalTransition()
-
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        modalPresentationStyle = .overCurrentContext
-//        transitioningDelegate = self
-    }
-
-    @available(*, unavailable)
-    required init?(coder _: NSCoder) {
-        fatalError("This class does not support NSCoder")
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,35 +77,35 @@ final class PopupErrorViewController: UIViewController {
 
         let verticalAlertOffset = view.frame.size.height / 4
         alertView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.leading.equalToSuperview().offset(Constants.horizontalOffset)
+            $0.trailing.equalToSuperview().inset(Constants.horizontalOffset)
             $0.top.equalToSuperview().offset(verticalAlertOffset)
             $0.bottom.equalToSuperview().inset(verticalAlertOffset)
         }
 
         titleLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().inset(20)
-            $0.top.equalToSuperview().offset(10)
+            $0.leading.equalToSuperview().offset(Constants.horizontalOffset)
+            $0.trailing.equalToSuperview().inset(Constants.horizontalOffset)
+            $0.top.equalToSuperview().offset(Constants.verticalOffset)
         }
 
-        descriptionLabel.snp.contentCompressionResistanceVerticalPriority = 10
+        descriptionLabel.snp.contentCompressionResistanceVerticalPriority = 1
         descriptionLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().inset(20)
-            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(Constants.horizontalOffset)
+            $0.trailing.equalToSuperview().inset(Constants.horizontalOffset)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(Constants.verticalOffset)
         }
 
         tryAgainButton.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().inset(20)
-            $0.bottom.equalTo(cancelButton.snp.top).offset(10)
+            $0.leading.equalToSuperview().offset(Constants.horizontalOffset)
+            $0.trailing.equalToSuperview().inset(Constants.horizontalOffset)
+            $0.bottom.equalTo(cancelButton.snp.top).offset(Constants.verticalOffset * -1)
         }
 
         cancelButton.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().inset(20)
-            $0.bottom.equalToSuperview().inset(10)
+            $0.leading.equalToSuperview().offset(Constants.horizontalOffset)
+            $0.trailing.equalToSuperview().inset(Constants.horizontalOffset)
+            $0.bottom.equalToSuperview().inset(Constants.verticalOffset)
         }
     }
 

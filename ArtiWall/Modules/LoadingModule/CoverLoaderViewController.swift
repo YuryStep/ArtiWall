@@ -25,6 +25,7 @@ final class CoverLoaderViewController: UIViewController {
         static let countdownDuration = 7
         static let labelTextSize: CGFloat = 30
         static let offsetTop = 15
+        static let offsetHorizontal = 10
     }
 
     var presenter: CoverLoaderOutput!
@@ -42,16 +43,9 @@ final class CoverLoaderViewController: UIViewController {
     }()
 
     private lazy var waitingLabel: UILabel = {
-        let label = UILabel(UIFont.appFont(.misterBrush, size: Constants.labelTextSize))
-        label.textColor = .white
+        let misterBrushFont = UIFont.appFont(.misterBrush, size: Constants.labelTextSize)
+        let label = UILabel(misterBrushFont)
         label.text = getTextForEstimatedTime(seconds: Constants.countdownDuration)
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        return label
-    }()
-
-    private lazy var label: UILabel = {
-        let label = UILabel()
         return label
     }()
 
@@ -72,11 +66,11 @@ final class CoverLoaderViewController: UIViewController {
 
     private func setupView() {
         view.addSubview(waitingLabel)
-        let guide = view.safeAreaLayoutGuide
 
+        let guide = view.safeAreaLayoutGuide
         waitingLabel.snp.makeConstraints {
-            $0.leading.equalTo(guide)
-            $0.trailing.equalTo(guide)
+            $0.leading.equalTo(guide).offset(Constants.offsetHorizontal)
+            $0.trailing.equalTo(guide).inset(Constants.offsetHorizontal)
             $0.top.equalTo(guide).offset(Constants.offsetTop)
         }
     }
@@ -127,9 +121,11 @@ extension CoverLoaderViewController: CoverLoaderInput {
         navigationController?.pushViewController(popupErrorController, animated: true)
     }
 
-    func showGeneratedWallpaper(with image: UIImage) {
+    func showGeneratedWallpaper(with _: UIImage) {
         stopAnimating()
-        let resultViewController = ResultModuleAssembly.makeModule(with: image)
-        navigationController?.pushViewController(resultViewController, animated: true)
+        let popupErrorController = PopupErrorModuleAssembly.makeModule()
+        navigationController?.pushViewController(popupErrorController, animated: true)
+//        let resultViewController = ResultModuleAssembly.makeModule(with: image)
+//        navigationController?.pushViewController(resultViewController, animated: true)
     }
 }
