@@ -77,7 +77,7 @@ final class ResultViewController: UIViewController {
 
         timeLabelView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(guide.snp.top)
+            $0.top.equalTo(backButton.snp.bottom)
         }
 
         backButton.snp.makeConstraints {
