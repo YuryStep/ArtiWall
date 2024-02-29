@@ -7,17 +7,17 @@
 
 import UIKit
 
-final class ResultPresenter {
+final class ResultPresenter: NSObject {
     private struct State {
         var generatedImage: UIImage
     }
-    
+
     private weak var view: ResultViewInput?
     private var state: State
 
     init(view: ResultViewInput?, generatedImage: UIImage) {
         self.view = view
-        self.state = State(generatedImage: generatedImage)
+        state = State(generatedImage: generatedImage)
     }
 }
 
@@ -25,16 +25,34 @@ extension ResultPresenter: ResultViewOutput {
     func getImage() -> UIImage {
         return state.generatedImage
     }
-    
+
     func backButtonTapped() {
-        print("backButtonTapped")
+        view?.comebackToHomeView()
     }
 
     func saveButtonTapped() {
-        print("saveButtonTapped")
+        saveImageToAlbum()
     }
 
     func showTimeButtonTapped() {
-        print("showTimeButtonTapped")
+        view?.updateTimeLabelVisibility()
+    }
+
+    private func saveImageToAlbum() {
+        UIImageWriteToSavedPhotosAlbum(state.generatedImage, self, #selector(savingToAlbum), nil)
+    }
+
+    @objc private func savingToAlbum(_: UIImage, error: NSError?, contextInfo _: UnsafeRawPointer) {
+        if let error = error {
+            print("Ошибка сохранения изображения: \(error.localizedDescription)")
+        } else {
+            print("Изображение успешно сохранено в галерее")
+            performHapticFeedback()
+        }
+    }
+
+    private func performHapticFeedback() {
+        let feedbackGenerator = UINotificationFeedbackGenerator()
+        feedbackGenerator.notificationOccurred(.success)
     }
 }

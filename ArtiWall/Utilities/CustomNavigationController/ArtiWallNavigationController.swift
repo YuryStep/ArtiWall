@@ -8,7 +8,6 @@
 import UIKit
 
 class ArtiWallNavigationController: UINavigationController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -16,10 +15,11 @@ class ArtiWallNavigationController: UINavigationController {
 }
 
 extension ArtiWallNavigationController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController,
+    func navigationController(_: UINavigationController,
                               animationControllerFor operation: UINavigationController.Operation,
-                              from fromVC: UIViewController,
-                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+                              from _: UIViewController,
+                              to _: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    {
         switch operation {
         case .push: return CustomPresentationTransition()
         case .pop: return CustomDismissalTransition()
@@ -27,4 +27,3 @@ extension ArtiWallNavigationController: UINavigationControllerDelegate {
         }
     }
 }
-

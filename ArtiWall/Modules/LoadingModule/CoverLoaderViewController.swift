@@ -1,5 +1,5 @@
 //
-//  LoadingViewController.swift
+//  CoverLoaderViewController.swift
 //  ArtiWall
 //
 //  Created by Юрий Степанчук on 22.02.2024.

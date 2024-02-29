@@ -15,7 +15,7 @@ final class CustomPresentationTransition: NSObject, UIViewControllerAnimatedTran
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromViewController = transitionContext.viewController(forKey: .from),
               let toViewController = transitionContext.viewController(forKey: .to)
-        else {  return }
+        else { return }
 
         let containerView = transitionContext.containerView
         let duration = transitionDuration(using: transitionContext)
@@ -35,4 +35,3 @@ final class CustomPresentationTransition: NSObject, UIViewControllerAnimatedTran
         }
     }
 }
-

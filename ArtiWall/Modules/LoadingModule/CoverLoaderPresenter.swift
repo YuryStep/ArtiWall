@@ -17,7 +17,7 @@ final class CoverLoaderPresenter {
     init(view: CoverLoaderInput?, networkService: AppNetworkService, imageDescription: String) {
         self.view = view
         self.networkService = networkService
-        self.state = State(imageDescription: imageDescription)
+        state = State(imageDescription: imageDescription)
     }
 }
 

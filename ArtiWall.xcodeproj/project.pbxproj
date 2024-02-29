@@ -26,6 +26,7 @@
 		EF66F3132B8F7C6D0098FA78 /* ResultModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3122B8F7C6D0098FA78 /* ResultModuleAssembly.swift */; };
 		EF66F3152B8F9C7D0098FA78 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3142B8F9C7D0098FA78 /* UIViewController+Extensions.swift */; };
 		EF66F3172B8FACE30098FA78 /* ArtiWallNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3162B8FACE30098FA78 /* ArtiWallNavigationController.swift */; };
+		EF66F31A2B908B5D0098FA78 /* TimeLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3192B908B5D0098FA78 /* TimeLabelView.swift */; };
 		EF9315E02B8CA37700BD3198 /* RoundIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */; };
 		EFAE42C62B83EFCE009F1C3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */; };
 		EFAE42C82B83F026009F1C3F /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C72B83F026009F1C3F /* .swiftformat */; };
@@ -65,6 +66,7 @@
 		EF66F3122B8F7C6D0098FA78 /* ResultModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModuleAssembly.swift; sourceTree = "<group>"; };
 		EF66F3142B8F9C7D0098FA78 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		EF66F3162B8FACE30098FA78 /* ArtiWallNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtiWallNavigationController.swift; sourceTree = "<group>"; };
+		EF66F3192B908B5D0098FA78 /* TimeLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabelView.swift; sourceTree = "<group>"; };
 		EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundIconButton.swift; sourceTree = "<group>"; };
 		EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EFAE42C72B83F026009F1C3F /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
@@ -145,12 +147,12 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		EF46CACD2B866CC700ECEB40 /* Model */ = {
+		EF46CACD2B866CC700ECEB40 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				EF46CAC72B85F4E800ECEB40 /* AIGeneratedModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EF46CAD02B86805F00ECEB40 /* Extensions */ = {
@@ -210,6 +212,7 @@
 				EF66F3122B8F7C6D0098FA78 /* ResultModuleAssembly.swift */,
 				EF66F3062B8F1CC90098FA78 /* ResultPresenter.swift */,
 				EFEF4A6B2B8792BB00C207C2 /* ResultViewController.swift */,
+				EF66F31B2B908B760098FA78 /* ResultModuleViews */,
 			);
 			path = ResultModule;
 			sourceTree = "<group>";
@@ -232,6 +235,14 @@
 				EF9315E12B8CF3EE00BD3198 /* CommonUI */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EF66F31B2B908B760098FA78 /* ResultModuleViews */ = {
+			isa = PBXGroup;
+			children = (
+				EF66F3192B908B5D0098FA78 /* TimeLabelView.swift */,
+			);
+			path = ResultModuleViews;
 			sourceTree = "<group>";
 		};
 		EF9315E12B8CF3EE00BD3198 /* CommonUI */ = {
@@ -265,9 +276,9 @@
 		EFB7A0FA2B83543F00613834 /* ArtiWall */ = {
 			isa = PBXGroup;
 			children = (
-				EF46CACD2B866CC700ECEB40 /* Model */,
-				EF46CAC42B85E7C800ECEB40 /* Services */,
 				EF46CABD2B84DA1700ECEB40 /* Root */,
+				EF46CACD2B866CC700ECEB40 /* Models */,
+				EF46CAC42B85E7C800ECEB40 /* Services */,
 				EF66F3032B8F19890098FA78 /* Modules */,
 				EF66F3182B8FCA0A0098FA78 /* Utilities */,
 				EF46CAD02B86805F00ECEB40 /* Extensions */,
@@ -445,6 +456,7 @@
 				EF66F30F2B8F7A390098FA78 /* CoverLoaderModuleAssembly.swift in Sources */,
 				EF46CAC82B85F4E800ECEB40 /* AIGeneratedModel.swift in Sources */,
 				EF66F3112B8F7B760098FA78 /* PopupErrorModuleAssembly.swift in Sources */,
+				EF66F31A2B908B5D0098FA78 /* TimeLabelView.swift in Sources */,
 				EFEF4A6C2B8792BB00C207C2 /* ResultViewController.swift in Sources */,
 				EF66F3072B8F1CC90098FA78 /* ResultPresenter.swift in Sources */,
 				EFB7A0FC2B83543F00613834 /* AppDelegate.swift in Sources */,

@@ -44,10 +44,17 @@ class RoundIconButton: UIButton {
         fatalError("This class does not support NSCoder")
     }
 
+    func setIcon(_ icon: Icon) {
+        let imageConfiguration = UIImage.SymbolConfiguration(pointSize: iconSize, weight: .regular, scale: .medium)
+        let image = UIImage(systemName: icon.rawValue, withConfiguration: imageConfiguration)
+        setImage(image, for: .normal)
+    }
+
     private func initialSetup() {
         let imageConfiguration = UIImage.SymbolConfiguration(pointSize: iconSize, weight: .regular, scale: .medium)
         let image = UIImage(systemName: iconName, withConfiguration: imageConfiguration)
         setImage(image, for: .normal)
+
         backgroundColor = iconBackgroundColor
         tintColor = iconTintColor
         clipsToBounds = true
