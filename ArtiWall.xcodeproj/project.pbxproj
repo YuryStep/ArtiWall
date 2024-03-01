@@ -28,6 +28,10 @@
 		EF66F3172B8FACE30098FA78 /* ArtiWallNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3162B8FACE30098FA78 /* ArtiWallNavigationController.swift */; };
 		EF66F31A2B908B5D0098FA78 /* TimeLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3192B908B5D0098FA78 /* TimeLabelView.swift */; };
 		EF66F31D2B90C6F30098FA78 /* PopupActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F31C2B90C6F30098FA78 /* PopupActionButton.swift */; };
+		EF66F3222B91AF610098FA78 /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3212B91AF610098FA78 /* HomeCollectionView.swift */; };
+		EF66F3242B91B2280098FA78 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3232B91B2280098FA78 /* UICollectionView+Extensions.swift */; };
+		EF66F3262B91B2D20098FA78 /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3252B91B2D20098FA78 /* UICollectionViewCell+Extensions.swift */; };
+		EF66F32A2B91DF110098FA78 /* PromptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3292B91DF110098FA78 /* PromptCell.swift */; };
 		EF9315E02B8CA37700BD3198 /* RoundIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */; };
 		EFAE42C62B83EFCE009F1C3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */; };
 		EFAE42C82B83F026009F1C3F /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C72B83F026009F1C3F /* .swiftformat */; };
@@ -69,6 +73,10 @@
 		EF66F3162B8FACE30098FA78 /* ArtiWallNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtiWallNavigationController.swift; sourceTree = "<group>"; };
 		EF66F3192B908B5D0098FA78 /* TimeLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabelView.swift; sourceTree = "<group>"; };
 		EF66F31C2B90C6F30098FA78 /* PopupActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupActionButton.swift; sourceTree = "<group>"; };
+		EF66F3212B91AF610098FA78 /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
+		EF66F3232B91B2280098FA78 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		EF66F3252B91B2D20098FA78 /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		EF66F3292B91DF110098FA78 /* PromptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptCell.swift; sourceTree = "<group>"; };
 		EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundIconButton.swift; sourceTree = "<group>"; };
 		EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EFAE42C72B83F026009F1C3F /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
@@ -164,6 +172,8 @@
 				EFEF4A612B87709500C207C2 /* UILabel+Extensions.swift */,
 				EFEF4A632B87717000C207C2 /* UIFont+Extensions.swift */,
 				EF66F3142B8F9C7D0098FA78 /* UIViewController+Extensions.swift */,
+				EF66F3232B91B2280098FA78 /* UICollectionView+Extensions.swift */,
+				EF66F3252B91B2D20098FA78 /* UICollectionViewCell+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +205,7 @@
 				EF66F30C2B8F42A20098FA78 /* HomeModuleAssembly.swift */,
 				EF66F3042B8F19D90098FA78 /* HomePresenter.swift */,
 				EFB7A0FF2B83543F00613834 /* HomeViewController.swift */,
+				EF66F32B2B91DF2D0098FA78 /* HomeModuleViews */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -254,6 +265,15 @@
 				EF66F31C2B90C6F30098FA78 /* PopupActionButton.swift */,
 			);
 			path = PopupErrorModuleViews;
+			sourceTree = "<group>";
+		};
+		EF66F32B2B91DF2D0098FA78 /* HomeModuleViews */ = {
+			isa = PBXGroup;
+			children = (
+				EF66F3212B91AF610098FA78 /* HomeCollectionView.swift */,
+				EF66F3292B91DF110098FA78 /* PromptCell.swift */,
+			);
+			path = HomeModuleViews;
 			sourceTree = "<group>";
 		};
 		EF9315E12B8CF3EE00BD3198 /* CommonUI */ = {
@@ -455,6 +475,7 @@
 			files = (
 				EF66F31D2B90C6F30098FA78 /* PopupActionButton.swift in Sources */,
 				EFB7A1002B83543F00613834 /* HomeViewController.swift in Sources */,
+				EF66F3242B91B2280098FA78 /* UICollectionView+Extensions.swift in Sources */,
 				EFEF4A622B87709600C207C2 /* UILabel+Extensions.swift in Sources */,
 				EFEF4A5B2B8750FA00C207C2 /* UIView+Extensions.swift in Sources */,
 				EF9315E02B8CA37700BD3198 /* RoundIconButton.swift in Sources */,
@@ -465,10 +486,12 @@
 				EF66F2F92B8E42F00098FA78 /* PopupErrorViewController.swift in Sources */,
 				EF66F2FE2B8E60880098FA78 /* CustomPresentationTransition.swift in Sources */,
 				EF66F3132B8F7C6D0098FA78 /* ResultModuleAssembly.swift in Sources */,
+				EF66F32A2B91DF110098FA78 /* PromptCell.swift in Sources */,
 				EF66F30F2B8F7A390098FA78 /* CoverLoaderModuleAssembly.swift in Sources */,
 				EF46CAC82B85F4E800ECEB40 /* AIGeneratedModel.swift in Sources */,
 				EF66F3112B8F7B760098FA78 /* PopupErrorModuleAssembly.swift in Sources */,
 				EF66F31A2B908B5D0098FA78 /* TimeLabelView.swift in Sources */,
+				EF66F3222B91AF610098FA78 /* HomeCollectionView.swift in Sources */,
 				EFEF4A6C2B8792BB00C207C2 /* ResultViewController.swift in Sources */,
 				EF66F3072B8F1CC90098FA78 /* ResultPresenter.swift in Sources */,
 				EFB7A0FC2B83543F00613834 /* AppDelegate.swift in Sources */,
@@ -480,6 +503,7 @@
 				EF66F3152B8F9C7D0098FA78 /* UIViewController+Extensions.swift in Sources */,
 				EF46CAC62B85EE3F00ECEB40 /* APIBuilder.swift in Sources */,
 				EFEF4A642B87717000C207C2 /* UIFont+Extensions.swift in Sources */,
+				EF66F3262B91B2D20098FA78 /* UICollectionViewCell+Extensions.swift in Sources */,
 				EFB7A0FE2B83543F00613834 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

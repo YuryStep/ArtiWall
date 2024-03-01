@@ -5,9 +5,9 @@
 //  Created by Юрий Степанчук on 22.02.2024.
 //
 
-import UIKit
-import SnapKit
 import EasyTipView
+import SnapKit
+import UIKit
 
 protocol ResultViewOutput {
     func getImage() -> UIImage

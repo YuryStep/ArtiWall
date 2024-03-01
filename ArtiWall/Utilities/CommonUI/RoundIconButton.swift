@@ -16,7 +16,7 @@ final class RoundIconButton: UIButton {
     enum Icon: String {
         case arrowDownCircleFill = "arrow.down.circle.fill"
         case arrowUpCircleFill = "arrow.up.circle.fill"
-        case chevronLeftCircleFill = "chevron.left.circle.fill"
+        case chevronLeftCircleFill = "house.circle.fill"
         case eyeCircleFill = "eye.circle.fill"
         case eyeSlashCircleFill = "eye.slash.circle.fill"
     }
@@ -28,7 +28,7 @@ final class RoundIconButton: UIButton {
 
     init(withIcon icon: Icon,
          iconBackgroundColor: UIColor = .systemGray5,
-         iconTintColor: UIColor = .black,
+         iconTintColor: UIColor = .appPink,
          iconSize: CGFloat = Constants.defaultIconSize)
     {
         buttonIcon = icon

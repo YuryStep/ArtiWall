@@ -11,11 +11,14 @@ import UIKit
 
 protocol HomeViewOutput {
     func searchButtonTapped()
+    func getPromptCellDisplayData() -> [HomeCollectionView.Item]
+    func didTapOnCell(at indexPath: IndexPath)
 }
 
 protocol HomeViewInput: AnyObject {
     func hideKeyboard()
     func showCoverLoader()
+    func insertIntoSearchBar(prompt: String)
 }
 
 final class HomeViewController: UIViewController {
@@ -26,9 +29,24 @@ final class HomeViewController: UIViewController {
         static let searchBarCornerRadius: CGFloat = 15
         static let searchBarBorderWidth: CGFloat = 3
         static let searchButtonIconSize: CGFloat = 25
+        static let titleLabelFontSize: CGFloat = 20
+        static let titleLabelText = "Choose one of an inspiring prompt below or craft your own unique idea"
     }
 
     var presenter: HomeViewOutput!
+
+    private lazy var collectionView: HomeCollectionView = {
+        let collectionView = HomeCollectionView(frame: .zero, delegate: self)
+        collectionView.keyboardDismissMode = .onDrag
+        return collectionView
+    }()
+
+    private lazy var titleLabel: UILabel = {
+        let font = UIFont.appFont(.misterBrush, size: Constants.titleLabelFontSize)
+        let label = UILabel(font)
+        label.text = Constants.titleLabelText
+        return label
+    }()
 
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -82,8 +100,22 @@ final class HomeViewController: UIViewController {
     }
 
     private func setupSubviews() {
-        view.addSubview(searchBar)
+        view.addSubviews([collectionView, titleLabel, searchBar])
         searchBar.addSubview(searchButton)
+        let guide = view.safeAreaLayoutGuide
+
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(guide).offset(20)
+            $0.leading.equalToSuperview().offset(Constants.offset)
+            $0.trailing.equalToSuperview().inset(Constants.inset)
+        }
+
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom)
+            $0.leading.equalToSuperview().offset(Constants.offset)
+            $0.trailing.equalToSuperview().inset(Constants.inset)
+            $0.bottom.equalTo(searchBar.snp.top).inset(-Constants.offset)
+        }
 
         searchBar.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(Constants.offset)
@@ -91,7 +123,6 @@ final class HomeViewController: UIViewController {
             $0.bottom.equalTo(view.keyboardLayoutGuide.snp.top).offset(-Constants.offset)
             $0.height.equalTo(Constants.searchBarHeight)
         }
-
         searchButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(Constants.inset)
@@ -101,6 +132,7 @@ final class HomeViewController: UIViewController {
     private func hideKeyboardOnTap(isOn: Bool) {
         guard isOn else { return }
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tapRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapRecognizer)
     }
 
@@ -115,6 +147,11 @@ extension HomeViewController: HomeViewInput {
         view.endEditing(true)
     }
 
+    func insertIntoSearchBar(prompt: String) {
+        searchBar.text = prompt
+        searchBar.becomeFirstResponder()
+    }
+
     func showCoverLoader() {
         guard let imageDescription = searchBar.text, !imageDescription.isEmpty else { return }
         let coverLoader = CoverLoaderModuleAssembly.makeModule(with: imageDescription)
@@ -125,5 +162,21 @@ extension HomeViewController: HomeViewInput {
 extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_: UISearchBar) {
         presenter.searchButtonTapped()
+    }
+}
+
+extension HomeViewController: HomeCollectionViewDelegate {
+    func getPromptCellDisplayData() -> [HomeCollectionView.Item] {
+        presenter.getPromptCellDisplayData()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
+        let width = (collectionView.frame.width - CGFloat(Constants.offset * 3)) / 2
+        return CGSize(width: width, height: width * 0.7)
+    }
+
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard indexPath.section == HomeCollectionView.Section.main.rawValue else { return }
+        presenter.didTapOnCell(at: indexPath)
     }
 }

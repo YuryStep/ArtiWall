@@ -21,12 +21,12 @@ protocol PopupErrorInput: AnyObject {
 final class PopupErrorViewController: UIViewController {
     private enum Constants {
         static let alertViewCornerRadius: CGFloat = 15
-        static let horizontalOffset = 20
-        static let verticalOffset = 10
-        static let titleLabelTextSize: CGFloat = 35
+        static let horizontalOffset = 10
+        static let verticalOffset = 5
+        static let titleLabelTextSize: CGFloat = 32
         static let descriptionLabelTextSize: CGFloat = 27
-        static let titleLabelText = "oooops!"
-        static let descriptionLabelText = "something went wrong 🤯 we are terrible sorry 🥺 if you see that message at first time please try again. if you see few times in a row please try later or change your prompt 🙏🏻"
+        static let titleLabelText = "Something go wrong 🥺"
+        static let descriptionLabelText = "something went wrong we are terrible sorry if you see that message at first time please try again. if you see few times in a row please try later or change your prompt"
         static let tryAgainButtonText = "Try Again"
         static let cancelButtonText = "Cancel"
     }
