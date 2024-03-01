@@ -62,17 +62,6 @@ final class HomeViewController: UIViewController {
         return searchBar
     }()
 
-    private lazy var searchButton: RoundIconButton = {
-        let button = RoundIconButton(
-            withIcon: .arrowUpCircleFill,
-            iconTintColor: .appPink,
-            iconSize: Constants.searchButtonIconSize
-        )
-
-        button.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
-        return button
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -101,7 +90,6 @@ final class HomeViewController: UIViewController {
 
     private func setupSubviews() {
         view.addSubviews([collectionView, titleLabel, searchBar])
-        searchBar.addSubview(searchButton)
         let guide = view.safeAreaLayoutGuide
 
         titleLabel.snp.makeConstraints {
@@ -122,10 +110,6 @@ final class HomeViewController: UIViewController {
             $0.trailing.equalToSuperview().inset(Constants.inset)
             $0.bottom.equalTo(view.keyboardLayoutGuide.snp.top).offset(-Constants.offset)
             $0.height.equalTo(Constants.searchBarHeight)
-        }
-        searchButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(Constants.inset)
         }
     }
 

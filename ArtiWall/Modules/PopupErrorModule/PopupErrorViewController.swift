@@ -25,7 +25,7 @@ final class PopupErrorViewController: UIViewController {
         static let verticalOffset = 5
         static let titleLabelTextSize: CGFloat = 32
         static let descriptionLabelTextSize: CGFloat = 27
-        static let titleLabelText = "Something go wrong 🥺"
+        static let titleLabelText = "Oooops!"
         static let descriptionLabelText = "something went wrong we are terrible sorry if you see that message at first time please try again. if you see few times in a row please try later or change your prompt"
         static let tryAgainButtonText = "Try Again"
         static let cancelButtonText = "Cancel"
@@ -99,7 +99,7 @@ final class PopupErrorViewController: UIViewController {
         tryAgainButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(Constants.horizontalOffset)
             $0.trailing.equalToSuperview().inset(Constants.horizontalOffset)
-            $0.bottom.equalTo(cancelButton.snp.top).offset(Constants.verticalOffset * -1)
+            $0.bottom.equalTo(cancelButton.snp.top).offset(-Constants.verticalOffset)
         }
 
         cancelButton.snp.makeConstraints {
