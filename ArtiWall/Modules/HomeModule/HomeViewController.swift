@@ -23,8 +23,8 @@ protocol HomeViewInput: AnyObject {
 
 final class HomeViewController: UIViewController {
     private enum Constants {
-        static let offset = 10
-        static let inset = 10
+        static let verticalOffset = 20
+        static let horizontalOffset = 10
         static let searchBarHeight = 44
         static let searchBarCornerRadius: CGFloat = 15
         static let searchBarBorderWidth: CGFloat = 3
@@ -93,22 +93,22 @@ final class HomeViewController: UIViewController {
         let guide = view.safeAreaLayoutGuide
 
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(guide).offset(20)
-            $0.leading.equalToSuperview().offset(Constants.offset)
-            $0.trailing.equalToSuperview().inset(Constants.inset)
+            $0.top.equalTo(guide).offset(Constants.verticalOffset)
+            $0.leading.equalToSuperview().offset(Constants.horizontalOffset)
+            $0.trailing.equalToSuperview().inset(Constants.horizontalOffset)
         }
 
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom)
-            $0.leading.equalToSuperview().offset(Constants.offset)
-            $0.trailing.equalToSuperview().inset(Constants.inset)
-            $0.bottom.equalTo(searchBar.snp.top).inset(-Constants.offset)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(Constants.verticalOffset)
+            $0.leading.equalToSuperview().offset(Constants.horizontalOffset)
+            $0.trailing.equalToSuperview().inset(Constants.horizontalOffset)
+            $0.bottom.equalTo(searchBar.snp.top).inset(-Constants.horizontalOffset)
         }
 
         searchBar.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(Constants.offset)
-            $0.trailing.equalToSuperview().inset(Constants.inset)
-            $0.bottom.equalTo(view.keyboardLayoutGuide.snp.top).offset(-Constants.offset)
+            $0.leading.equalToSuperview().offset(Constants.horizontalOffset)
+            $0.trailing.equalToSuperview().inset(Constants.horizontalOffset)
+            $0.bottom.equalTo(view.keyboardLayoutGuide.snp.top).offset(-Constants.verticalOffset)
             $0.height.equalTo(Constants.searchBarHeight)
         }
     }
@@ -155,7 +155,7 @@ extension HomeViewController: HomeCollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width - CGFloat(Constants.offset * 3)) / 2
+        let width = (collectionView.frame.width - CGFloat(Constants.horizontalOffset * 3)) / 2
         return CGSize(width: width, height: width * 0.7)
     }
 
