@@ -1,6 +1,0 @@
-framework module Pods_ArtiWall {
-  umbrella header "Pods-ArtiWall-umbrella.h"
-
-  export *
-  module * { export * }
-}
