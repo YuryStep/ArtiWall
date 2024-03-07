@@ -3,6 +3,17 @@
 
 ТЗ в pdf лежит [здесь](https://drive.google.com/file/d/1jcc4g7d0LgQcnwbXy4JgUkYkQXuYsWon/view?usp=drive_link).
 
+<details>
+<summary><b>В проекте используются сторонние зависимости с использованием Cococapods. Инструкция по установке.</b></summary>  
+
+<br>Для успешной установки зависимостей выполните следующие шаги:</br>
+1. Откройте терминал.
+2. Перейдите в корневую директорию проекта.
+3. Выполните команду: ```pod install```
+4. Запустите **ArtiWall.xcworkspace**
+
+</details>
+
 ## Стэк, Ограничения и Архитектура
 Стэк: **Swift 5, UIKit** 
 Минимальная версия: **iOS 15**   
@@ -17,7 +28,7 @@
  </tr>
 </table>
 
-## Video
+## Видео
 
 https://github.com/YuryStep/ArtiWall/assets/112872920/abec3bb5-5e1e-4542-89a3-db56a969500b
 
