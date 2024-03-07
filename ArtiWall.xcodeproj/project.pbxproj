@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		466A68D3B619E6BF8B98F2AA /* Pods_ArtiWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D294D57BACE4F7FFE862DA /* Pods_ArtiWall.framework */; };
 		EF46CABF2B84DA3800ECEB40 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF46CABE2B84DA3800ECEB40 /* Colors.xcassets */; };
 		EF46CAC32B85E7BA00ECEB40 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CAC22B85E7BA00ECEB40 /* NetworkService.swift */; };
 		EF46CAC62B85EE3F00ECEB40 /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46CAC52B85EE3F00ECEB40 /* APIBuilder.swift */; };
@@ -33,6 +32,7 @@
 		EF66F3262B91B2D20098FA78 /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3252B91B2D20098FA78 /* UICollectionViewCell+Extensions.swift */; };
 		EF66F32A2B91DF110098FA78 /* PromptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66F3292B91DF110098FA78 /* PromptCell.swift */; };
 		EF9315E02B8CA37700BD3198 /* RoundIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9315DF2B8CA37700BD3198 /* RoundIconButton.swift */; };
+		EF949B478599434A45FB316F /* Pods_ArtiWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9A8CB6CFD2A16A86A22D90 /* Pods_ArtiWall.framework */; };
 		EFAE42C62B83EFCE009F1C3F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */; };
 		EFAE42C82B83F026009F1C3F /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = EFAE42C72B83F026009F1C3F /* .swiftformat */; };
 		EFB7A0FC2B83543F00613834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB7A0FB2B83543F00613834 /* AppDelegate.swift */; };
@@ -50,9 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		46D294D57BACE4F7FFE862DA /* Pods_ArtiWall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtiWall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BBECCC33CE5B66F4A8EE2E5 /* Pods-ArtiWall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtiWall.debug.xcconfig"; path = "Target Support Files/Pods-ArtiWall/Pods-ArtiWall.debug.xcconfig"; sourceTree = "<group>"; };
-		A64B4EA5E2C2345BDD367176 /* Pods-ArtiWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtiWall.release.xcconfig"; path = "Target Support Files/Pods-ArtiWall/Pods-ArtiWall.release.xcconfig"; sourceTree = "<group>"; };
+		313CE007BE58AC17A87EB95E /* Pods-ArtiWall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtiWall.debug.xcconfig"; path = "Target Support Files/Pods-ArtiWall/Pods-ArtiWall.debug.xcconfig"; sourceTree = "<group>"; };
+		387E21B6294F6F4F7EC95F08 /* Pods-ArtiWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtiWall.release.xcconfig"; path = "Target Support Files/Pods-ArtiWall/Pods-ArtiWall.release.xcconfig"; sourceTree = "<group>"; };
 		EF46CABE2B84DA3800ECEB40 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EF46CAC22B85E7BA00ECEB40 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		EF46CAC52B85EE3F00ECEB40 /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		EFEF4A632B87717000C207C2 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		EFEF4A652B878A7E00C207C2 /* Mister Brush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mister Brush.ttf"; sourceTree = "<group>"; };
 		EFEF4A6B2B8792BB00C207C2 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		FE9A8CB6CFD2A16A86A22D90 /* Pods_ArtiWall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtiWall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,28 +101,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466A68D3B619E6BF8B98F2AA /* Pods_ArtiWall.framework in Frameworks */,
+				EF949B478599434A45FB316F /* Pods_ArtiWall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		534B61159310816E952C582B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				46D294D57BACE4F7FFE862DA /* Pods_ArtiWall.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		9BCA11608CD1BD7AD756F2FE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5BBECCC33CE5B66F4A8EE2E5 /* Pods-ArtiWall.debug.xcconfig */,
-				A64B4EA5E2C2345BDD367176 /* Pods-ArtiWall.release.xcconfig */,
+				313CE007BE58AC17A87EB95E /* Pods-ArtiWall.debug.xcconfig */,
+				387E21B6294F6F4F7EC95F08 /* Pods-ArtiWall.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BDD811D97DE52590359F0073 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE9A8CB6CFD2A16A86A22D90 /* Pods_ArtiWall.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EF46CABD2B84DA1700ECEB40 /* Root */ = {
@@ -281,10 +281,10 @@
 			children = (
 				EFB7A0FA2B83543F00613834 /* ArtiWall */,
 				9BCA11608CD1BD7AD756F2FE /* Pods */,
-				534B61159310816E952C582B /* Frameworks */,
 				EFAE42C52B83EFCE009F1C3F /* .swiftlint.yml */,
 				EFAE42C72B83F026009F1C3F /* .swiftformat */,
 				EFB7A0F92B83543F00613834 /* Products */,
+				BDD811D97DE52590359F0073 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -333,12 +333,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFB7A10C2B83544100613834 /* Build configuration list for PBXNativeTarget "ArtiWall" */;
 			buildPhases = (
-				3E1C29A034939053AD3A286D /* [CP] Check Pods Manifest.lock */,
+				8B324ABF6881F287EC7049DC /* [CP] Check Pods Manifest.lock */,
 				EFDC71FA2B83E32A0022EB9E /* Run Script SwiftLint */,
 				EFB7A0F42B83543F00613834 /* Sources */,
 				EFB7A0F52B83543F00613834 /* Frameworks */,
 				EFB7A0F62B83543F00613834 /* Resources */,
-				D69A194FD1874779CF4CCFFB /* [CP] Embed Pods Frameworks */,
+				C07C5A22F0F611B7322C3B1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -400,7 +400,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E1C29A034939053AD3A286D /* [CP] Check Pods Manifest.lock */ = {
+		8B324ABF6881F287EC7049DC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -422,7 +422,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D69A194FD1874779CF4CCFFB /* [CP] Embed Pods Frameworks */ = {
+		C07C5A22F0F611B7322C3B1D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -635,7 +635,7 @@
 		};
 		EFB7A10D2B83544100613834 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BBECCC33CE5B66F4A8EE2E5 /* Pods-ArtiWall.debug.xcconfig */;
+			baseConfigurationReference = 313CE007BE58AC17A87EB95E /* Pods-ArtiWall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -669,7 +669,7 @@
 		};
 		EFB7A10E2B83544100613834 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A64B4EA5E2C2345BDD367176 /* Pods-ArtiWall.release.xcconfig */;
+			baseConfigurationReference = 387E21B6294F6F4F7EC95F08 /* Pods-ArtiWall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
